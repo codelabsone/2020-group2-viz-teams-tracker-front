@@ -1,9 +1,21 @@
-  <div class="team-list-container">
+<mat-card class="team-list-container">
+  <mat-card-header>
     <mat-card-title>
       Teams
     </mat-card-title>
-    <mat-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </mat-card-content>
-  </div>
-
+</mat-card-header>
+  <mat-card-content *ngFor="let team of teams">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{team.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>This team's id is: {{team.id}}
+        ASSEMBLE!
+      </p>
+    </mat-expansion-panel>
+    
+    
+  </mat-card-content>
+</mat-card>
