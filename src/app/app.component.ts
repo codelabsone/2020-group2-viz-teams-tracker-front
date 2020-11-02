@@ -1,3 +1,4 @@
+import { MatCardModule } from '@angular/material/card';
 import { Component } from '@angular/core';
 
 @Component({
