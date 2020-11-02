@@ -2,8 +2,8 @@
     <mat-card-title>
       Teams
     </mat-card-title>
-    <mat-card-content *ngFor="let team of teams">
-      <mat-expansion-panel hideToggle>
+    <mat-card-content >
+      <mat-expansion-panel *ngFor="let team of teams" hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
             {{team.name}}
