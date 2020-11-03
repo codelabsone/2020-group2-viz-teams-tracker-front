@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "group2-viz-teams-tracker-front"
+  "defaultProject": "group2-viz-teams-tracker-front",
+  "cli": {
+    "analytics": false
+  }
 }
