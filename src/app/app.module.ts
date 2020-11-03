@@ -10,10 +10,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    TeamsListPanelComponent
   ],
   imports: [
     BrowserModule,

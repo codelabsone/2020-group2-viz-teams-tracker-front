@@ -1,23 +1,4 @@
 <app-header></app-header>
+<app-teams-list-panel></app-teams-list-panel>
 <router-outlet></router-outlet>
-<mat-card class="team-list-container">
-  <mat-card-header>
-    <mat-card-title>
-      Teams
-    </mat-card-title>
-  </mat-card-header>
-    <mat-card-content >
-      <mat-expansion-panel *ngFor="let team of teams" showToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{team.name}}
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>This team's id is: {{team.id}}
-          ASSEMBLE!
-        </p>
-      </mat-expansion-panel>
-      
-      
-    </mat-card-content>
-  </mat-card>
+
