@@ -1,0 +1,36 @@
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #ff4e00;
+  color:#f5f5f5;
+}
+
+.logo {
+  border: 1px solid;
+  border-color: #ff4e00;
+}
+
+.line {
+  border:#cc3e00;
+  height: 50px;
+  padding: 0 8px 0 8px;
+}
+
+.project-name-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  .project-name {
+    padding-left: 8px;
+    color:#f5f5f5;
+  }
+}
+
+.user-name {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5px;
+}
