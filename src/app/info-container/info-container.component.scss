@@ -1,9 +1,23 @@
-.container {
-  max-width: 400px;
+.mat-card {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 45%;
+  height: 80%;
+  // max-width: 400px;
   margin-top: 20px;
   margin-right: 20px;
-  backgroun-color:
+  background-color: white;
 
+
+
+}
+
+.mat-card-content{
+  color: gray;
+  text-align: center;
+  align-items: center;
+  font-size: 2em;
 }
 
 // .example-header-image {
