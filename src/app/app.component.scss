@@ -1,30 +1,28 @@
-.team-list-container {
+.mat-card {
     position: fixed;
-    top: 5px;
+    top: 10px;
     left: 10px;
     width: 50%;
     height: 85%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: transparent;
+    background-color: blue;
     margin: 2%;
-    
-    
+
+
 }
 .mat-card-title {
-    border-bottom: 1.5px solid gray;
-    padding: 3%;
-    background-color: whitesmoke;
+    color: gray;
+    border-bottom: 1px solid whitesmoke;
+    padding: 2%;
     width: 100%;
     text-align: left;
-    
+
 
 }
 .mat-card-content {
+    color: gray;
     height: 100%;
     width: 100%;
-    background-color: whitesmoke;
     padding: 3%;
-    border-bottom: 1.5px gray solid;
 }
