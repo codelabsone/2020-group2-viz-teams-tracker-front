@@ -9,26 +9,33 @@ import { MatCardModule } from '@angular/material/card';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
+import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     InfoContainerComponent,
     HeaderComponent,
-    TeamsListPanelComponent
+    TeamsListPanelComponent,
+    AddMemberDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     MatDividerModule,
+    MatDialogModule,
 
     BrowserAnimationsModule,
     MatCardModule,
     // FlexLayoutModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

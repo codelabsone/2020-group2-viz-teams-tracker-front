@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
+import { MatDialog } from '@angular/material/dialog';
+import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -9,11 +11,19 @@ import { TEAMS } from '../mock-files/mock-teams';
 })
 export class TeamsListPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
   title = 'group2-viz-teams-tracker-front';
 
   teams = TEAMS;
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddMemberDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
