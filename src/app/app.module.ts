@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -32,7 +32,7 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
 
     BrowserAnimationsModule,
     MatCardModule,
-    // FlexLayoutModule,
+    FlexLayoutModule,
     MatExpansionModule,
     MatIconModule
 

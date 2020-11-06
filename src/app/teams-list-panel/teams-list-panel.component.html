@@ -10,8 +10,13 @@
             <mat-panel-title>
               {{team.name}}
             </mat-panel-title>
-
           </mat-expansion-panel-header>
+          <div *ngIf="team">
+            {{team.members}}
+            <p *ngFor="let member of team.members">
+              {{member.pic}}
+            </p>
+          </div>
           <mat-action-row>
             <mat-icon class="memberIcon" (click)="openDialog()">person_add</mat-icon>
           </mat-action-row>
