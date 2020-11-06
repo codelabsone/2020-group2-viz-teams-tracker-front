@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
@@ -28,7 +29,9 @@ import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.com
     BrowserAnimationsModule,
     MatCardModule,
     FlexLayoutModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
