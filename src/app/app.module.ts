@@ -11,6 +11,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
@@ -34,7 +37,10 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
     MatCardModule,
     FlexLayoutModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
 
   ],
   providers: [],

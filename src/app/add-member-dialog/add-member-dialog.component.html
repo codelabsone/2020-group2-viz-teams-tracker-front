@@ -1,1 +1,29 @@
-<p>Add Member Dialog</p>
+
+  <form class="form">
+    <div class="form-container">
+        <div class="row-one">
+            <mat-form-field class="formfield" class="first-name">
+            <input matInput placeholder="First Name">
+            </mat-form-field>
+            <mat-form-field class="formfield" class="last-name">
+            <input matInput placeholder="Last Name">
+            </mat-form-field>
+        </div>
+        <div class="row-two">
+          <mat-form-field class="formfield" class="title">
+          <mat-select placeholder="Title">Title</mat-select>
+          </mat-form-field>
+          <mat-form-field class="formfield" class="team">
+          <mat-select placeholder="Team">Team</mat-select>
+          <mat-select-trigger>
+          <mat-option *ngFor="let team of teams" [value]="team.name">{{team}}</mat-option>
+          </mat-select-trigger>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="button-row">
+      <button mat-button class="cancel" color="">Cancel</button>
+      <button mat-button class="submit" color="">Submit</button>
+    </div>
+  </form>
+
