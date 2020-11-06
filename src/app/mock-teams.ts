@@ -7,3 +7,7 @@ export const TEAMS: Team[] = [
     { id: 4, name: 'Data Crispr'},
     { id: 5, name: 'CLO'}
 ]
+
+
+
+
