@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
@@ -27,7 +27,7 @@ import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.com
 
     BrowserAnimationsModule,
     MatCardModule,
-    FlexLayoutModule,
+    // FlexLayoutModule,
     MatExpansionModule
   ],
   providers: [],

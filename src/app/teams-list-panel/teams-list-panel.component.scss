@@ -9,7 +9,7 @@
 //     align-items: center;
 //     background-color: transparent;
 //     margin: 2%;
-    
+
 // }
 .mat-card-title {
     color: grey;
@@ -18,6 +18,21 @@
 
 .mat-card-content {
   color: grey;
+  //*
+  .tooltip .tooltiptext {
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: gray;
+    color: white;
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+  }
+
 }
 
 .mat-expansion-panel-header-title {
@@ -26,10 +41,11 @@
 .mat-expansion-panel-content {
     background-color: grey !important;
 }
-mat-card {
+.mat-card {
     padding: 0;
-   
+
     // margin: 32px;
     width: 100%;
     height: 100%;
 }
+

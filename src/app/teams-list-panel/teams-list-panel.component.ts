@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from 'src/app/team';
-import { TEAMS } from './../mock-teams';
+import { Team } from 'src/app/models/team';
+import { TEAMS } from '../mock-files/mock-teams';
 
 @Component({
   selector: 'app-teams-list-panel',

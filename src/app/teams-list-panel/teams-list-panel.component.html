@@ -11,9 +11,10 @@
               {{team.name}}
             </mat-panel-title>
           </mat-expansion-panel-header>
-          
+
+          <mat-card-content *ngFor="let member of member">{{member.pic}}>
+          </mat-card-content>
+
         </mat-expansion-panel>
-        
-        
       </mat-card-content>
     </mat-card>
