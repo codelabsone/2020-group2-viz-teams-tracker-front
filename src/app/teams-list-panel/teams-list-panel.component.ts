@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from 'src/app/models/team';
+import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
-import { Team } from 'src/app/team';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
-import { TEAMS } from './../mock-teams';
 
 @Component({
   selector: 'app-teams-list-panel',
