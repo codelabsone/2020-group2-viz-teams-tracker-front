@@ -19,6 +19,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
 import { TeamsService } from './teams.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { TeamsService } from './teams.service';
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
-    
+    DragDropModule,
     BrowserAnimationsModule,
     MatCardModule,
     FlexLayoutModule,
