@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Team } from 'src/app/team';
 import { TEAMS } from './../mock-teams';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { TeamsService } from '../teams.service';
+
 
 @Component({
   selector: 'app-add-member-dialog',
@@ -9,12 +12,13 @@ import { TEAMS } from './../mock-teams';
   styleUrls: ['./add-member-dialog.component.scss']
 })
 export class AddMemberDialogComponent implements OnInit {
-  constructor() { }
+  constructor(private teamService: TeamsService, @Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
   teams: Team[] = TEAMS;
+  positions = ['Software Engineer', 'Quality Engineer', 'Team Anchor']
   ngOnInit(): void {
-    console.log(TEAMS)
-  }
+ this.teamService.getAllTeams().subscribe((teams: Team[])=> {this.teams = teams})
 
 
 
+}
 }

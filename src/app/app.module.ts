@@ -14,10 +14,12 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-
+import {HttpClientModule} from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
+import { TeamsService } from './teams.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
-
+    
     BrowserAnimationsModule,
     MatCardModule,
     FlexLayoutModule,
@@ -40,10 +42,11 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    HttpClientModule,
+    MatButtonModule,
 
   ],
-  providers: [],
+  providers: [TeamsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

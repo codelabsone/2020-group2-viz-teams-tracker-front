@@ -11,13 +11,14 @@
         </div>
         <div class="row-two">
           <mat-form-field class="formfield" class="title">
-          <mat-select placeholder="Title">Title</mat-select>
+          <mat-select placeholder="Title">Title
+            <mat-option *ngFor="let position of positions">{{position}}</mat-option>
+          </mat-select>
           </mat-form-field>
           <mat-form-field class="formfield" class="team">
-          <mat-select placeholder="Team">Team</mat-select>
-          <mat-select-trigger>
-          <mat-option *ngFor="let team of teams" [value]="team.name">{{team}}</mat-option>
-          </mat-select-trigger>
+          <mat-select [placeholder]=data.name>Team
+          <mat-option *ngFor="let team of teams" [value]="team.name">{{team.name}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
     </div>

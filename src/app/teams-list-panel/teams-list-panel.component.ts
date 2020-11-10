@@ -19,9 +19,11 @@ export class TeamsListPanelComponent implements OnInit {
 
   teams = TEAMS;
 
-  openDialog() {
-    const dialogRef = this.dialog.open(AddMemberDialogComponent);
-
+  openDialog(team: Team) {
+    let dialogRef = this.dialog.open(AddMemberDialogComponent, {
+      data: {name: team.name}
+    });
+  
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
