@@ -19,6 +19,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
 import { TeamsService } from './teams.service';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TeamsService } from './teams.service';
     MatSelectModule,
     HttpClientModule,
     MatButtonModule,
+    MatTooltipModule
 
   ],
   providers: [TeamsService],

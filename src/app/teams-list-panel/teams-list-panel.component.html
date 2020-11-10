@@ -5,12 +5,15 @@
       </mat-card-title>
     </mat-card-header>
       <mat-card-content >
+        <div>
         <mat-expansion-panel *ngFor="let team of teams" showToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{team.name}}
             </mat-panel-title>
+            
           </mat-expansion-panel-header>
+          
           <div *ngIf="team">
             {{team.members}}
             <div *ngFor="let member of team.members" class="mat-card-content">
@@ -18,11 +21,17 @@
               <!-- <app-movie-card [movie]="movie"></app-movie-card> -->
             </div>
           </div>
-          <mat-action-row>
+          <mat-action-row >
             <mat-icon class="memberIcon" (click)="openDialog(team)">person_add</mat-icon>
           </mat-action-row>
         </mat-expansion-panel>
-
-
+        </div>
+       
+          <mat-action-row class="action-row">
+          
+            <mat-icon matTooltip="Add Team">add_box</mat-icon>
+          </mat-action-row>
+  
       </mat-card-content>
+      
     </mat-card>
