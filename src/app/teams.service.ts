@@ -22,11 +22,12 @@ private teamUrl = './mock-teams'
      return this.http.get<any>(`${this.teamUrl}/show?id=${params.id}`);
    }
 
-   getTeam( id: number): Observable<Team | undefined> {
-     return this.getAllTeams()
-     .pipe(
-      map((thisTeam: Team[]) => thisTeam.find(p => p.id === id))
-    );
+   getTeam( id: number): Observable<Team> {
+     return null
+    //  return this.getAllTeams()
+    //  .pipe(
+    //   map((thisTeam: Team) => thisTeam.find(p => p.id === id))
+    // );
    }
 
    getAllTeams() {
@@ -38,5 +39,3 @@ private teamUrl = './mock-teams'
     return of(TEAMS)
    }
   }
-
-

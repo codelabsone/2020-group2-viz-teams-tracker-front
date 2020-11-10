@@ -3,6 +3,9 @@ import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
+import { Member } from '../models/member';
+import { Identifiers } from '@angular/compiler';
+import { TeamsService } from '../teams.service'
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -10,14 +13,20 @@ import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog
   styleUrls: ['./teams-list-panel.component.scss']
 })
 export class TeamsListPanelComponent implements OnInit {
+  member: Member
+  memberPic: string
+  teams: Team
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private teamservice: TeamsService) { }
 
   ngOnInit(): void {
+
+    this.teamservice.getAllTeams().subscribe(x => {
+      //this.teams = x
+    })
   }
   title = 'group2-viz-teams-tracker-front';
 
-  teams = TEAMS;
 
   openDialog(team: Team) {
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
@@ -27,5 +36,15 @@ export class TeamsListPanelComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  setDefaultPic(member: Member): string {
+    console.log("member works", this.member)
+    if (member.pic === null) {
+      console.log("it works")
+      return 'assets/images/avatar.png'
+    }
+    return this.member.pic
+
   }
 }

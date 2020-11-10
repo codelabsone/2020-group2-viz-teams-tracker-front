@@ -1,6 +1,6 @@
 import { TEAMS } from './mock-files/mock-teams';
 import { Member } from "./models/member";
-import { MEMBERS  } from "./mock-files/mock-members";
+// import { MEMBERS  } from "./mock-files/mock-members";
 import { Team } from "./models/team";
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -33,8 +33,6 @@ private memberUrl = './mock-members.ts'
     return this.http.get<Member[]>(this.memberUrl)
     .pipe(
       tap(data => console.log('All: ' + JSON.stringify(data))),
-
     );
   }
-
 }
