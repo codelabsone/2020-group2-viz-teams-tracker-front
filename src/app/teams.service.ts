@@ -2,8 +2,10 @@ import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../environments/environment';
 import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Team } from './models/team';
+import { TEAMS } from './mock-files/mock-teams';
 
 
 
@@ -29,11 +31,13 @@ private teamUrl = './mock-teams'
    }
 
    getAllTeams() {
-    return this.http.get<Team[]>(this.teamUrl)
-    .pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
+    // return this.http.get<Team[]>(this.teamUrl)
+    // .pipe(
+    //   tap(data => console.log('All: ' + JSON.stringify(data))),
 
-    );
+    // );
+    console.log(TEAMS)
+    return of(TEAMS)
    }
   }
 

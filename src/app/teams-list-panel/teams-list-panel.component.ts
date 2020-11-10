@@ -3,6 +3,7 @@ import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
+import { TeamsService } from '../teams.service'
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -11,13 +12,16 @@ import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog
 })
 export class TeamsListPanelComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private teamService: TeamsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.teamService.getAllTeams().subscribe(data => {
+      this.teams = data
+    }) 
   }
   title = 'group2-viz-teams-tracker-front';
 
-  teams = TEAMS;
+  teams: Team[];
 
   openDialog() {
     const dialogRef = this.dialog.open(AddMemberDialogComponent);
