@@ -23,17 +23,23 @@ img {
   align-items: center;
 
   .tooltip .tooltiptext {
+    visibility: hidden;
     width: 120px;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    background-color: gray;
+    // bottom: 100%;
+    // left: 50%;
+    // margin-left: -60px;
+    background-color: darkslategray;
     color: white;
-    // .container {
-    //     display: flex;
-    //     justify-content: space-evenly;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+  }
 
-    // }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
 
 }

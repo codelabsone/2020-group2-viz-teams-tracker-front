@@ -12,8 +12,9 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="card-content" *ngIf="team">
-            <div *ngFor="let member of team.members" class="image-div">
+            <div *ngFor="let member of team.members" class="image-div" class="tooltip">
               <img *ngIf="member" [src]="setDefaultPic(member)">
+              <span class="tooltiptext">{{member.name}}</span>
             </div>
           </div>
           <mat-action-row>
