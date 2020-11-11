@@ -1,7 +1,7 @@
 export class Member {
-  id: number
-  name: string
-  pic: string
+  id?: number
+  name?: string
+  pic?: string
 
   constructor({
     id = null,

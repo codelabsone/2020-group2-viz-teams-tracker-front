@@ -2,7 +2,7 @@ import { Team } from '../models/team';
 // import { MEMBERS } from '../mock-files/mock-members';
 
 
-export const TEAMS=[
+export const TEAMS: Team[]=[
   {
   id: 1,
   name: "P2P",

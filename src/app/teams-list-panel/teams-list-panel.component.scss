@@ -1,11 +1,27 @@
+.team-list-container {
+  width: 50%;
+}
+
 .mat-card-title {
     color: grey;
     padding-top: 16px;
 }
 
-.mat-card-content {
+img {
+  flex: 1;
+  max-width: 100%;
+  width: 100px;
+  height: auto;
+  padding: 10%;
+}
+.card-content {
   color: grey;
-  //*
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
   .tooltip .tooltiptext {
     width: 120px;
     bottom: 100%;
@@ -39,3 +55,9 @@
 .memberIcon {
   color: rgba(69, 90, 100, .87);
 }
+
+
+.image-div {
+  padding: 2%;
+}
+

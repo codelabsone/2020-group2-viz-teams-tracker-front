@@ -15,14 +15,14 @@ import { TeamsService } from '../teams.service'
 export class TeamsListPanelComponent implements OnInit {
   member: Member
   memberPic: string
-  teams: Team
+  teams: Team[]
 
   constructor(public dialog: MatDialog, private teamservice: TeamsService) { }
 
   ngOnInit(): void {
 
     this.teamservice.getAllTeams().subscribe(x => {
-      //this.teams = x
+      this.teams = x
     })
   }
   title = 'group2-viz-teams-tracker-front';
@@ -32,19 +32,19 @@ export class TeamsListPanelComponent implements OnInit {
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
   setDefaultPic(member: Member): string {
-    console.log("member works", this.member)
-    if (member.pic === null) {
-      console.log("it works")
+    // console.log("member works", this.member)
+    if (member.pic === null || member.pic === undefined) {
+      // console.log("it works")
       return 'assets/images/avatar.png'
     }
-    return this.member.pic
+    return member.pic
 
   }
 }

@@ -30,7 +30,7 @@ private teamUrl = './mock-teams'
     // );
    }
 
-   getAllTeams() {
+   getAllTeams(): Observable <Team[]> {
     // return this.http.get<Team[]>(this.teamUrl)
     // .pipe(
     //   tap(data => console.log('All: ' + JSON.stringify(data))),
