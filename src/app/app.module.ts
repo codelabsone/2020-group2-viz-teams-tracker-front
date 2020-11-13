@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -33,6 +34,7 @@ import { TeamsService } from './teams.service';
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
+    MatTooltipModule,
 
     BrowserAnimationsModule,
     MatCardModule,

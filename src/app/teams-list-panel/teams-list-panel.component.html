@@ -12,9 +12,8 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="card-content" *ngIf="team">
-            <div *ngFor="let member of team.members" class="image-div" class="tooltip">
-              <img *ngIf="member" [src]="setDefaultPic(member)">
-              <span class="tooltiptext">{{member.name}}</span>
+            <div *ngFor="let member of team.members" class="image-div">
+                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip">
             </div>
           </div>
           <mat-action-row>

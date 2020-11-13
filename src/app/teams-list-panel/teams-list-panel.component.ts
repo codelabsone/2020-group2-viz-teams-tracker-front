@@ -3,9 +3,13 @@ import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
+import {TooltipPosition} from '@angular/material/tooltip';
 import { Member } from '../models/member';
 import { Identifiers } from '@angular/compiler';
-import { TeamsService } from '../teams.service'
+import { TeamsService } from '../teams.service';
+import { FormControl } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -16,6 +20,9 @@ export class TeamsListPanelComponent implements OnInit {
   member: Member
   memberPic: string
   teams: Team[]
+  positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
+  position = new FormControl(this.positionOptions[0]);
+
 
   constructor(public dialog: MatDialog, private teamservice: TeamsService) { }
 
@@ -48,3 +55,6 @@ export class TeamsListPanelComponent implements OnInit {
 
   }
 }
+
+
+
