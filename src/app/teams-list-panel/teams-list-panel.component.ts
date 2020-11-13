@@ -4,6 +4,7 @@ import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
 import { PicsumService } from '../picsum.service';
+import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -34,5 +35,14 @@ export class TeamsListPanelComponent implements OnInit {
       this.images = result;
       console.log(this.images);
     })
+  }
+  openNewTeamDialog() {
+    let dialogRef = this.dialog.open(AddTeamDialogComponent, {
+
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

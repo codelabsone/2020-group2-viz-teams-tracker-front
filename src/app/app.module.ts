@@ -21,6 +21,7 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
 import { TeamsService } from './teams.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     InfoContainerComponent,
     HeaderComponent,
     TeamsListPanelComponent,
-    AddMemberDialogComponent
+    AddMemberDialogComponent,
+    AddTeamDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+.form-container {
+    display: flex;
+    width: 42vw;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+  
+  }
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+  }
+  
+  .mat-form-field {
+    margin: 8px;
+    margin-top: -10px;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    
+}
