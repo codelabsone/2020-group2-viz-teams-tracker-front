@@ -23,6 +23,12 @@ export class TeamsListPanelComponent implements OnInit {
   teams = TEAMS;
   images = [];
   openDialog(team: Team) {
+
+    this.picsumService.getPictures().subscribe((result: any) => {
+      this.images = result;
+      console.log(this.images);
+    })
+
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
       
@@ -31,10 +37,7 @@ export class TeamsListPanelComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    this.picsumService.getPictures().subscribe((result: any) => {
-      this.images = result;
-      console.log(this.images);
-    })
+    
   }
   openNewTeamDialog() {
     let dialogRef = this.dialog.open(AddTeamDialogComponent, {

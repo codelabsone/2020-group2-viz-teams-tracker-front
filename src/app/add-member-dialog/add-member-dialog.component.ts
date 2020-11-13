@@ -4,7 +4,7 @@ import { Team } from 'src/app/team';
 import { TEAMS } from './../mock-teams';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TeamsService } from '../teams.service';
-
+import { PicsumService } from '../picsum.service';
 
 @Component({
   selector: 'app-add-member-dialog',
@@ -12,13 +12,14 @@ import { TeamsService } from '../teams.service';
   styleUrls: ['./add-member-dialog.component.scss']
 })
 export class AddMemberDialogComponent implements OnInit {
-  constructor(private teamService: TeamsService, @Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
   teams: Team[] = TEAMS;
-  positions = ['Software Engineer', 'Quality Engineer', 'Team Anchor']
+  positions = ['Software Engineer', 'Quality Engineer', 'Team Anchor'];
+  images = [];
+  
+  constructor(private picSumService: PicsumService,private teamService: TeamsService, @Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
+
   ngOnInit(): void {
- this.teamService.getAllTeams().subscribe((teams: Team[])=> {this.teams = teams})
-
-
-
-}
+    this.teamService.getAllTeams().subscribe((teams: Team[])=> {this.teams = teams})
+    this.picSumService.getPictures().subscribe((images: any[])=> {this.images = images})
+  }
 }

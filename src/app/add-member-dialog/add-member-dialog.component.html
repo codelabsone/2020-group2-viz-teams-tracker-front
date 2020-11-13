@@ -1,6 +1,14 @@
 
   <form class="form">
     <div class="form-container">
+      
+      <mat-paginator [length]="100"
+        [pageSize]="5">
+          <img *ngFor="let image of images" src="{{image.download_url}}">
+      </mat-paginator>
+    
+
+
         <div class="row-one">
             <mat-form-field class="formfield" class="first-name">
             <input matInput placeholder="First Name">

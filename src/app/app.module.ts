@@ -22,6 +22,7 @@ import { TeamsService } from './teams.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.compon
     MatSelectModule,
     HttpClientModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule
 
   ],
   providers: [TeamsService],
