@@ -10,6 +10,8 @@ import { TeamsService } from '../teams.service';
 import { FormControl } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
+import { PicsumService } from '../picsum.service';
+import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -19,25 +21,41 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 export class TeamsListPanelComponent implements OnInit {
   member: Member
   memberPic: string
-  teams: Team[]
+  images = [];
+  teams: Team[] = TEAMS;
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
+  title = 'group2-viz-teams-tracker-front';
 
-
-  constructor(public dialog: MatDialog, private teamservice: TeamsService) { }
+  constructor(
+    public dialog: MatDialog,
+    private teamservice: TeamsService,
+    private picsumService: PicsumService
+    ) { }
 
   ngOnInit(): void {
-
     this.teamservice.getAllTeams().subscribe(x => {
       this.teams = x
     })
   }
-  title = 'group2-viz-teams-tracker-front';
-
 
   openDialog(team: Team) {
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    this.picsumService.getPictures().subscribe((result: any) => {
+      this.images = result;
+      console.log(this.images);
+    })
+  }
+  openNewTeamDialog() {
+    let dialogRef = this.dialog.open(AddTeamDialogComponent, {
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
