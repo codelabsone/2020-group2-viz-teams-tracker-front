@@ -3,6 +3,7 @@ import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
+import { PicsumService } from '../picsum.service';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -11,21 +12,27 @@ import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog
 })
 export class TeamsListPanelComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private picsumService: PicsumService) { }
 
   ngOnInit(): void {
+    
   }
   title = 'group2-viz-teams-tracker-front';
 
   teams = TEAMS;
-
+  images = [];
   openDialog(team: Team) {
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
+      
     });
   
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.picsumService.getPictures().subscribe((result: any) => {
+      this.images = result;
+      console.log(this.images);
+    })
   }
 }

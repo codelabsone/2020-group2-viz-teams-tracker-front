@@ -20,6 +20,7 @@ import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.com
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
 import { TeamsService } from './teams.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
-    
+    DragDropModule,
     BrowserAnimationsModule,
     MatCardModule,
     FlexLayoutModule,

@@ -16,8 +16,8 @@
           
           <div *ngIf="team">
             {{team.members}}
-            <div *ngFor="let member of team.members" class="mat-card-content">
-              {{member.pic}}
+            <div *ngFor="let member of team.members" class="mat-card-content" cdkDrag>
+              text
               <!-- <app-movie-card [movie]="movie"></app-movie-card> -->
             </div>
           </div>
