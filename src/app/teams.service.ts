@@ -1,9 +1,9 @@
+import { Team } from 'src/app/team';
 import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../environments/environment';
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Team } from './models/team';
 import { TEAMS } from './mock-files/mock-teams';
 
 
@@ -38,5 +38,3 @@ private teamUrl = './mock-teams'
     return of(TEAMS)
    }
   }
-
-

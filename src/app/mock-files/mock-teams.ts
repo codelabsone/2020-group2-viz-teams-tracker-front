@@ -1,4 +1,4 @@
-import { Team } from '../models/team';
+import { Team } from 'src/app/team';
 import { MEMBERS } from '../mock-files/mock-members';
 import { MEMBERS2 } from '../mock-files/mock-members';
 
