@@ -13,12 +13,9 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-
-          <div *ngIf="team">
-            {{team.members}}
-            <div *ngFor="let member of team.members" class="mat-card-content">
-              {{member.pic}}
-              <!-- <app-movie-card [movie]="movie"></app-movie-card> -->
+          <div class="card-content" *ngIf="team">
+            <div *ngFor="let member of team.members" class="image-div" cdkDrag>
+                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip">
             </div>
           </div>
           <mat-action-row >
@@ -29,7 +26,7 @@
 
           <mat-action-row class="action-row">
 
-            <mat-icon matTooltip="Add Team">add_box</mat-icon>
+            <mat-icon matTooltip="Add Team" (click)="openNewTeamDialog()">add_box</mat-icon>
           </mat-action-row>
 
       </mat-card-content>
