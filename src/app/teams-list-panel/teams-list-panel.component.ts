@@ -9,9 +9,9 @@ import { Identifiers } from '@angular/compiler';
 import { TeamsService } from '../teams.service';
 import { FormControl } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
 import { PicsumService } from '../picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
+import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -37,6 +37,10 @@ export class TeamsListPanelComponent implements OnInit {
     this.teamservice.getAllTeams().subscribe(x => {
       this.teams = x
     })
+  }
+
+  drop(event: CdkDragDrop<string[]>, team: Team) {
+    moveItemInArray(team.members, event.previousIndex, event.currentIndex)
   }
 
   openDialog(team: Team) {
@@ -72,7 +76,10 @@ export class TeamsListPanelComponent implements OnInit {
     return member.pic
 
   }
+
 }
+
+
 
 
 
