@@ -1,5 +1,4 @@
 import { Member } from './models/member';
-import { MEMBERS } from './mock-files/mock-members';
 
 
 export class Team {

@@ -1,7 +1,7 @@
 import { TEAMS } from './mock-files/mock-teams';
 import { Member } from "./models/member";
 // import { MEMBERS  } from "./mock-files/mock-members";
-import { Team } from "./models/team";
+import { Team } from "./models/team-interface";
 import { RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from './../environments/environment';

@@ -22,6 +22,9 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
 import { TeamsService } from './teams.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
+import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.compon
     MatSelectModule,
     HttpClientModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatListModule,
+    MatGridListModule
 
   ],
   providers: [TeamsService],

@@ -1,9 +1,23 @@
+
 <mat-card>
 
-  <mat-card-content>
+  <mat-card-content class="not-selected" *ngIf="!team">
 
-      {{team.name}}
+      Select a team to view members
 
   </mat-card-content>
-
+  <mat-card-content *ngIf="team">
+    <mat-card-header>
+      {{team.name}}
+    </mat-card-header>
+ <div class="container">
+<div class="content" *ngFor="let member of members">
+    <img  class="member-image" src="{{member.pic}}"/>
+    <div class="member-name">
+      <div>{{member.name}}</div>
+      <div>title</div>
+    </div>
+</div>
+</div>
+</mat-card-content>
 </mat-card>

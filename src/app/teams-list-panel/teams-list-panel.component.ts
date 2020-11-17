@@ -75,7 +75,7 @@ export class TeamsListPanelComponent implements OnInit {
   }
 
   showTeam(team: Team) {
-    this.panelClick.emit(team)
+    this.teamservice.selectedTeam.next(team)
     console.log("this")
   }
 }

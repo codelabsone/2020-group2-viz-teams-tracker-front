@@ -1,6 +1,7 @@
 import { Team } from './../team';
-import { MatCardModule } from '@angular/material/card';
 import { Component, OnInit, Input } from '@angular/core';
+import { TeamsService } from '../teams.service';
+import { Member } from '../models/member';
 
 
 
@@ -10,11 +11,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./info-container.component.scss']
 })
 export class InfoContainerComponent implements OnInit {
-  @Input() team: Team = new Team({id: null, name: ''});
+ team: Team
+ members: Member[] = []
 
-  constructor() { }
+  constructor(private teamService: TeamsService) { }
 
   ngOnInit(): void {
+    this.teamService.selectedTeam.subscribe(team => {
+      this.team = team
+      if (team) {
+      this.members = team.members
+      }
+    })
   }
-
 }
