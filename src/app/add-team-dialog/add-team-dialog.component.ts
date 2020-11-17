@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { TEAMS } from '../mock-files/mock-teams';
+
+
 
 @Component({
   selector: 'app-add-team-dialog',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTeamDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
 
   ngOnInit(): void {
   }
 
+  cancel() {
+    console.log("baloney")
+  }
+
+  submit() {
+    console.log("submitted")
+
+  }
 }
