@@ -11,27 +11,24 @@
             <mat-panel-title>
               {{team.name}}
             </mat-panel-title>
-            
+
           </mat-expansion-panel-header>
-          
-          <div *ngIf="team">
-            {{team.members}}
-            <div *ngFor="let member of team.members" class="mat-card-content" cdkDrag>
-              text
-              <!-- <app-movie-card [movie]="movie"></app-movie-card> -->
+          <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
+            <div *ngFor="let member of team.members" class="image-div" cdkDrag>
+                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
             </div>
           </div>
+
           <mat-action-row >
             <mat-icon class="memberIcon" (click)="openDialog(team)">person_add</mat-icon>
           </mat-action-row>
         </mat-expansion-panel>
         </div>
-       
+
           <mat-action-row class="action-row">
-          
             <mat-icon matTooltip="Add Team" (click)="openNewTeamDialog()">add_box</mat-icon>
           </mat-action-row>
-  
+
       </mat-card-content>
-      
+
     </mat-card>

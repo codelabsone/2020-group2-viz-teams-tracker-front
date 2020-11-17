@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -19,7 +20,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
 import { TeamsService } from './teams.service';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -39,6 +39,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
+    MatTooltipModule,
     DragDropModule,
     BrowserAnimationsModule,
     MatCardModule,

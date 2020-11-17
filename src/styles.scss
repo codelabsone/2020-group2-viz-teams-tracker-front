@@ -6,6 +6,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     color: rgba(69,90,100,.87) !important }
 
+    .mat-expansion-panel-body{
+      padding: 8px !important;
+    }
+
     .mat-expansion-panel-content {
         background-color: lightgrey;
         box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
@@ -19,6 +23,7 @@ body {
     margin-top: -10px;
     width: 100%;
    }
+<<<<<<< HEAD
 .user-image {
     width: 100px;
     height: 100px;
@@ -29,3 +34,5 @@ body {
 //     border-width: 2px;
 //     border-color: #ff4e00;
 // }
+=======
+>>>>>>> 690ed0be19d70c8df6b5293013058edaf6123eac
