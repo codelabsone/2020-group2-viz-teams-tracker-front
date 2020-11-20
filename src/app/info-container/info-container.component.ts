@@ -2,6 +2,7 @@ import { Team } from './../team';
 import { Component, OnInit, Input } from '@angular/core';
 import { TeamsService } from '../teams.service';
 import { Member } from '../models/member';
+import { TeamMembersService } from '../team-members.service'
 
 
 
@@ -13,11 +14,15 @@ import { Member } from '../models/member';
 export class InfoContainerComponent implements OnInit {
 
   selectedTeam: Team
-  constructor(private teamService: TeamsService) { }
+  selectedMember: Member
+  constructor(private teamService: TeamsService, private memberService: TeamMembersService ) { }
 
   ngOnInit(): void {
     this.teamService.selectedTeam.subscribe( data => {
       this.selectedTeam = data
     });
+    this.memberService.memberSelected.subscribe(data => {
+      this.selectedMember = data
+    })
   }
 }

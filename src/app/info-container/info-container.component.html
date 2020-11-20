@@ -1,6 +1,6 @@
 
 <mat-card>
-  <mat-card-content class="not-selected" *ngIf="!this.selectedTeam">
+  <mat-card-content class="not-selected" *ngIf="!this.selectedTeam && !this.selectedMember">
 
       Select a team to view members
 
@@ -11,5 +11,11 @@
   <app-team-view></app-team-view>
 
 </mat-card-content>
+
+<mat-card-content *ngIf="this.selectedMember">
+  
+    <app-member-view></app-member-view>
+
+  </mat-card-content>
 
 </mat-card>

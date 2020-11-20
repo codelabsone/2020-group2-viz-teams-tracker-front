@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../teams.service';
 import { Member } from '../models/member';
 import { Team } from '../team';
+import { TeamMembersService } from '../team-members.service';
+import { TEAMS } from '../mock-files/mock-teams';
+
 
 @Component({
   selector: 'app-member-view',
@@ -10,16 +13,11 @@ import { Team } from '../team';
 })
 export class MemberViewComponent implements OnInit {
   team: Team
-  members: Member[] = []
-  constructor(private teamService: TeamsService) { }
+  members: Member
+  constructor(private memberService: TeamMembersService,) { }
 
   ngOnInit(): void {
-    this.teamService.selectedTeam.subscribe(team => {
-      this.team = team
-      if (team) {
-      this.members = team.members
-      }
-    })
+
   }
 
 }
