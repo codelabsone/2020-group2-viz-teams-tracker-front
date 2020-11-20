@@ -45,3 +45,26 @@ mat-card-content {
 mat-card {
   height: 100%;
 }
+
+.name {
+  width: 100% !important;
+}
+
+
+.position {
+  width: 100% !important;
+  margin-bottom: 10px;
+}
+
+.mat-card-title {
+  color: grey !important;
+  padding-top: 16px;
+}
+
+.member-image {
+  margin: 10px;
+  min-width: 85px;
+  min-height: 85px;
+  max-width: 85px;
+  max-height: 85px;
+}

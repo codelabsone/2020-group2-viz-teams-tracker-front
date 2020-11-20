@@ -7,15 +7,15 @@
 
   </mat-card-content>
   <mat-card-content *ngIf="team">
-    <mat-card-header>
+    <mat-card-title>
       {{team.name}}
-    </mat-card-header>
+    </mat-card-title>
  <div class="container">
 <div class="content" *ngFor="let member of members">
     <img  class="member-image" src="{{member.pic}}"/>
     <div class="member-name">
-      <div>{{member.name}}</div>
-      <div>title</div>
+      <div class="name">{{member.name}}</div>
+      <div class="position">{{member.position}}</div>
     </div>
 </div>
 </div>

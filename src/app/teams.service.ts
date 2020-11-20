@@ -15,6 +15,7 @@ import { TEAMS } from './mock-files/mock-teams';
 })
 export class TeamsService {
 private teamUrl = './mock-teams'
+baseUr
   selectedTeam: BehaviorSubject<Team> = new BehaviorSubject(null)
   constructor( private http: HttpClient) {
    }
@@ -32,11 +33,11 @@ private teamUrl = './mock-teams'
    }
 
    getAllTeams(): Observable <Team[]> {
-    // return this.http.get<Team[]>(this.teamUrl)
-    // .pipe(
-    //   tap(data => console.log('All: ' + JSON.stringify(data))),
+    return this.http.get<Team[]>(this.teamUrl)
+    .pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))),
 
-    // );
+    );
     return of(TEAMS)
    }
 
