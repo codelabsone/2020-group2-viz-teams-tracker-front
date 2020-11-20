@@ -1,6 +1,17 @@
 
   <form class="form">
     <div class="form-container">
+      <div class="user-image-container">
+        <img class="user-image" *ngFor="let image of images | slice:startPoint:startPoint+5"
+      src="{{image.download_url}}" (click)="selected(image)" [ngClass]="{'selected-user-image': selectedImage===image}">
+      </div>
+      <mat-paginator [length]="100"
+        [pageSize]="5" (page)="pageChange($event)">
+      
+      </mat-paginator>
+    
+
+
         <div class="row-one">
             <mat-form-field class="formfield" class="first-name">
             <input matInput placeholder="First Name">
@@ -12,7 +23,7 @@
         <div class="row-two">
           <mat-form-field class="formfield" class="title">
           <mat-select placeholder="Title">
-            <mat-option *ngFor="let position of positions">{{position}}</mat-option>
+          <mat-option *ngFor="let position of positions">{{position}}</mat-option>
           </mat-select>
           </mat-form-field>
           <mat-form-field class="formfield" class="team">

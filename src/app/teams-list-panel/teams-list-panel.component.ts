@@ -7,9 +7,9 @@ import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog
 import {TooltipPosition} from '@angular/material/tooltip';
 import { TeamsService } from '../teams.service';
 import { FormControl } from '@angular/forms';
-
 import { PicsumService } from '../picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
+import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -40,7 +40,17 @@ export class TeamsListPanelComponent implements OnInit {
     })
   }
 
+  drop(event: CdkDragDrop<string[]>, team: Team) {
+    moveItemInArray(team.members, event.previousIndex, event.currentIndex)
+  }
+
   openDialog(team: Team) {
+
+    this.picsumService.getPictures().subscribe((result: any) => {
+      this.images = result;
+      console.log(this.images);
+    })
+
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
 
@@ -49,10 +59,7 @@ export class TeamsListPanelComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    this.picsumService.getPictures().subscribe((result: any) => {
-      this.images = result;
-      console.log(this.images);
-    })
+
   }
   openNewTeamDialog() {
     let dialogRef = this.dialog.open(AddTeamDialogComponent, {
@@ -79,6 +86,8 @@ export class TeamsListPanelComponent implements OnInit {
     console.log("this")
   }
 }
+
+
 
 
 

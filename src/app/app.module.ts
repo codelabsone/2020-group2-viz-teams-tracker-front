@@ -25,6 +25,7 @@ import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.compon
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     MatTooltipModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule
 
   ],
   providers: [TeamsService],

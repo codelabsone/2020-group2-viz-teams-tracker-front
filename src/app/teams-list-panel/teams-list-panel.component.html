@@ -13,11 +13,12 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <div class="card-content" *ngIf="team">
+          <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
             <div *ngFor="let member of team.members" class="image-div" cdkDrag>
-                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip">
+                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
             </div>
           </div>
+
           <mat-action-row >
             <mat-icon class="memberIcon" (click)="openDialog(team)">person_add</mat-icon>
           </mat-action-row>
@@ -25,7 +26,6 @@
         </div>
 
           <mat-action-row class="action-row">
-
             <mat-icon matTooltip="Add Team" (click)="openNewTeamDialog()">add_box</mat-icon>
           </mat-action-row>
 
