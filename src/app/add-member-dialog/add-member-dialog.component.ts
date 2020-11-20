@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Team } from 'src/app/team';
-import { TEAMS } from './../mock-teams';
+import { Team } from '../models/team';
+import { TEAMS } from './../mock-files/mock-teams';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TeamsService } from '../teams.service';
 

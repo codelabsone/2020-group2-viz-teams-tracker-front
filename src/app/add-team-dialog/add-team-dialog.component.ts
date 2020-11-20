@@ -1,8 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TEAMS } from '../mock-files/mock-teams';
-
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TeamsService } from './../teams.service';
+import { Team } from './../models/team';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-team-dialog',
@@ -10,18 +12,27 @@ import { TEAMS } from '../mock-files/mock-teams';
   styleUrls: ['./add-team-dialog.component.scss']
 })
 export class AddTeamDialogComponent implements OnInit {
+  formGroup = new FormGroup({
+    // parameter: new FormControl('', Validators.required)
+    name: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required)
+  });
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {name: string}) { }
+  constructor(private teamsService: TeamsService, @Inject(MAT_DIALOG_DATA) public data: {name: string}, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  cancel() {
-    console.log("baloney")
-  }
+  cancel() { }
 
   submit() {
     console.log("submitted")
-
+    const newTeam = new Team (this.formGroup.value);
+    console.log(newTeam);
+    this.teamsService.addNewTeam(newTeam)
+    .subscribe((data: Team) => {
+      localStorage.setItem('name', data.name);
+      localStorage.setItem('description', data.description);
+    })
   }
 }

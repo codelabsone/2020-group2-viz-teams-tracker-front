@@ -15,7 +15,9 @@ import { TEAMS } from './mock-files/mock-teams';
 })
 export class TeamsService {
 private teamUrl = './mock-teams'
+private apiUrl: string = environment.apiUrl;
   constructor( private http: HttpClient) {
+    this.http = http;
    }
 
    getTeambyId(params) {
@@ -39,8 +41,8 @@ private teamUrl = './mock-teams'
     return of(TEAMS)
    }
 
-  // addNewTeam(): Observable <Team[]> {
-  // TEAMS.push((name, ))
-  // }
+   addNewTeam(team: Team) {
+    return this.http.post(environment.apiUrl + 'teams/create', team);
+   }
 
   }

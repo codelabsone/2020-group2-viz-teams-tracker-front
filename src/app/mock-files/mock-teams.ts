@@ -6,6 +6,7 @@ export const TEAMS: Team[]=[
   {
   id: 1,
   name: "P2P",
+  description: "baloney potato salad",
   members:[
   { id: 1, name: "Roger Beasley", pic: "http://placekitten.com/100/100" },
   { id: 2, name: "Bob", pic: "http://placekitten.com/100/100" },
@@ -19,7 +20,7 @@ export const TEAMS: Team[]=[
   { id: 10, name: "Joe", pic: "http://placekitten.com/100/100" },
   { id: 11, name: "Bill", pic: "http://placekitten.com/100/100" },
   { id: 12, name: "Sue", pic: "http://placekitten.com/100/100" },]
-  },
+  }]
   // {
   //   id: number;
   //   name: string;
@@ -31,13 +32,9 @@ export const TEAMS: Team[]=[
   //     { id: number, name: string, pic: string },
   //     { id: number, name: string, pic: string }]
   // }]
-]
 
-//Original idea
-// export const TEAMS: Team[] = [
-//     { id: 1, name: 'P2P', members: MEMBERS},
-//     { id: 2, name: 'Catalog', members:},
-//     { id: 3, name: 'Cornerstone', members: MEMBERS},
-//     { id: 4, name: 'Data Crispr', members: MEMBERS},
-//     { id: 5, name: 'CLO', members: MEMBERS}
-// ]
+
+
+
+
+
