@@ -11,17 +11,13 @@ import { Member } from '../models/member';
   styleUrls: ['./info-container.component.scss']
 })
 export class InfoContainerComponent implements OnInit {
- team: Team
- members: Member[] = []
 
+  selectedTeam: Team
   constructor(private teamService: TeamsService) { }
 
   ngOnInit(): void {
-    this.teamService.selectedTeam.subscribe(team => {
-      this.team = team
-      if (team) {
-      this.members = team.members
-      }
-    })
+    this.teamService.selectedTeam.subscribe( data => {
+      this.selectedTeam = data
+    });
   }
 }

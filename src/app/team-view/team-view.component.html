@@ -1,0 +1,15 @@
+
+<mat-card-content *ngIf="team">
+    <mat-card-title>
+      {{team.name}}
+    </mat-card-title>
+  <div class="container">
+  <div class="content" *ngFor="let member of members">
+    <img  class="member-image" src="{{member.pic}}"/>
+    <div class="member-name">
+      <div class="name">{{member.name}}</div>
+      <div class="position">{{member.position}}</div>
+    </div>
+  </div>
+  </div>
+  </mat-card-content>

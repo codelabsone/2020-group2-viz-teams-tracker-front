@@ -26,6 +26,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TeamViewComponent } from './team-view/team-view.component';
+import { MemberViewComponent } from './member-view/member-view.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HeaderComponent,
     TeamsListPanelComponent,
     AddMemberDialogComponent,
-    AddTeamDialogComponent
+    AddTeamDialogComponent,
+    TeamViewComponent,
+    MemberViewComponent
   ],
   imports: [
     BrowserModule,
