@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://nemacodes-back.herokuapp.com/'
+  apiUrl: 'https://group2-viz-teams-tracker-back.herokuapp.com/'
 };
 
 

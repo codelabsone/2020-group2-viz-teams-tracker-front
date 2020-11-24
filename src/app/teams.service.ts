@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Team } from './models/team';
 import { TEAMS } from './mock-files/mock-teams';
-
+import { Router } from "@angular/router";
 
 
 
@@ -15,9 +15,13 @@ import { TEAMS } from './mock-files/mock-teams';
 })
 export class TeamsService {
 // private teamUrl = './mock-teams'
-private apiUrl: string = environment.apiUrl;
-  constructor( private http: HttpClient) {
-    this.http = http;
+private apiUrl: string
+constructor(
+  private router: Router,
+  private http: HttpClient
+  ) {
+
+    this.apiUrl = `${environment.apiUrl}api/teams`
    }
 
    getTeambyId(params) {
@@ -32,17 +36,12 @@ private apiUrl: string = environment.apiUrl;
     // );
    }
 
-   getAllTeams(): Observable <Team[]> {
-    // return this.http.get<Team[]>(this.teamUrl)
-    // .pipe(
-    //   tap(data => console.log('All: ' + JSON.stringify(data))),
-
-    // );
-    return of(TEAMS)
+   getAllTeams() {
+    return this.http.get<any>(`${this.apiUrl}/index`)
    }
 
-   addNewTeam(team: Team) {
-    return this.http.post('localhost:3000/api/teams/create', team);
+   addNewTeam(params) {
+    return this.http.post<any>(`${this.apiUrl}/create`, params);
    }
 
   }
