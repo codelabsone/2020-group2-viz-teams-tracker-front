@@ -18,21 +18,22 @@ export class AddTeamDialogComponent implements OnInit {
     description: new FormControl('', Validators.required)
   });
 
-  constructor(private teamsService: TeamsService, @Inject(MAT_DIALOG_DATA) public data: {name: string}, private router: Router) { }
+  constructor(
+    private teamsService: TeamsService,
+    @Inject(MAT_DIALOG_DATA) public data: {name: string, description: string},
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  cancel() { }
-
   submit() {
     console.log("submitted")
     const newTeam = new Team (this.formGroup.value);
-    console.log(newTeam);
-    this.teamsService.addNewTeam(newTeam)
-    .subscribe((data: Team) => {
+    console.log(this.formGroup.value);
+    this.teamsService.addNewTeam(newTeam).subscribe((data: Team) => {
       localStorage.setItem('name', data.name);
       localStorage.setItem('description', data.description);
     })
+
   }
 }

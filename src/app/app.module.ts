@@ -22,6 +22,8 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
 import { TeamsService } from './teams.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.compon
     HeaderComponent,
     TeamsListPanelComponent,
     AddMemberDialogComponent,
-    AddTeamDialogComponent
+    AddTeamDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,9 @@ import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.compon
     MatSelectModule,
     HttpClientModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
 
   ],
   providers: [TeamsService],

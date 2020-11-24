@@ -14,14 +14,14 @@ import { TEAMS } from './mock-files/mock-teams';
   providedIn: 'root'
 })
 export class TeamsService {
-private teamUrl = './mock-teams'
+// private teamUrl = './mock-teams'
 private apiUrl: string = environment.apiUrl;
   constructor( private http: HttpClient) {
     this.http = http;
    }
 
    getTeambyId(params) {
-     return this.http.get<any>(`${this.teamUrl}/show?id=${params.id}`);
+     return this.http.get<any>(`${this.apiUrl}/show?id=${params.id}`);
    }
 
    getTeam( id: number): Observable<Team> {
@@ -42,7 +42,7 @@ private apiUrl: string = environment.apiUrl;
    }
 
    addNewTeam(team: Team) {
-    return this.http.post(environment.apiUrl + 'teams/create', team);
+    return this.http.post('localhost:3000/api/teams/create', team);
    }
 
   }

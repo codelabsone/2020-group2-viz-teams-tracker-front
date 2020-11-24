@@ -12,3 +12,4 @@ export class Team {
     this.description = value.description;
   }
 }
+
