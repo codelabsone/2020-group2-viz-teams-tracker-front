@@ -9,7 +9,7 @@ import { TeamsService } from '../teams.service';
 import { FormControl } from '@angular/forms';
 import { PicsumService } from '../picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
-import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem,} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -21,6 +21,8 @@ export class TeamsListPanelComponent implements OnInit {
   @Input() Member: string;
   @Output() panelClick = new EventEmitter<Team>();
   member: Member
+  team: Team
+  otherTeam: Team
   memberPic: string
   images = [];
   teams: Team[] = TEAMS;
@@ -35,13 +37,24 @@ export class TeamsListPanelComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.teamservice.getAllTeams().subscribe(x => {
-      this.teams = x
+    this.teamservice.getAllTeams().subscribe(data => {
+      this.teams = data
     })
   }
 
-  drop(event: CdkDragDrop<string[]>, team: Team) {
-    moveItemInArray(team.members, event.previousIndex, event.currentIndex)
+  drop(event: CdkDragDrop<string[]>, team: Team,  otherTeam: Team) {
+    if (event.previousContainer === event.container) 
+    {
+      moveItemInArray(team.members, event.previousIndex, event.currentIndex);
+      console.log(team.members)
+    } 
+    else {
+      
+      transferArrayItem(team.members,
+        otherTeam.members,
+        event.previousIndex,
+        event.currentIndex );
+    }
   }
 
   openDialog(team: Team) {

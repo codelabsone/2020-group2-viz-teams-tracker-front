@@ -12,7 +12,7 @@ export const TEAMS: Team[]=[
   // { id: 3, name: "Matt"},
   { id: 4, name: "Molly", pic: "http://placekitten.com/100/100", position:'Software engineer' },
   { id: 5, name: "Seth", pic: "http://placekitten.com/100/100",  },
-  // { id: 6, name: "Shawn", pic: "http://placekitten.com/100/100" },
+  { id: 6, name: "Shawn", pic: "http://placekitten.com/100/100" },
   // { id: 7, name: "Francee", pic: "http://placekitten.com/100/100" },
   // { id: 8, name: "Jacqueline", pic: "http://placekitten.com/100/100" },
   // { id: 9, name: "Phyllis", pic: "http://placekitten.com/100/100" },
