@@ -12,17 +12,34 @@ import { TeamMembersService } from '../team-members.service'
   styleUrls: ['./info-container.component.scss']
 })
 export class InfoContainerComponent implements OnInit {
-
+  team: Team
+  member: Member
   selectedTeam: Team
   selectedMember: Member
+
+
   constructor(private teamService: TeamsService, private memberService: TeamMembersService ) { }
 
   ngOnInit(): void {
     this.teamService.selectedTeam.subscribe( data => {
       this.selectedTeam = data
+      this.selectedMember = null
+      this.team = this.selectedTeam
     });
-    this.memberService.memberSelected.subscribe(data => {
-      this.selectedMember = data
+    this.memberService.memberSelected.subscribe(member => {
+      this.selectedMember = member
+      this.selectedTeam = null
+      this.member = this.selectedMember
     })
+
+    
   }
+  
+  returnToTeam(): void {
+    this.teamService.selectedTeam.subscribe( data => {
+      this.selectedTeam = data
+      this.selectedMember = null
+    });
+  }
+ 
 }

@@ -60,7 +60,8 @@ import { MemberViewComponent } from './member-view/member-view.component';
     MatTooltipModule,
     MatListModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    
 
   ],
   providers: [TeamsService],

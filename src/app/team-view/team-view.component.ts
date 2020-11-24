@@ -12,6 +12,7 @@ import { TeamMembersService } from '../team-members.service'
 export class TeamViewComponent implements OnInit {
   team: Team
   members: Member[] = []
+  // memberFriend: Member
   constructor(private teamService: TeamsService, private memberService: TeamMembersService) { }
 
   ngOnInit(): void {
@@ -24,8 +25,10 @@ export class TeamViewComponent implements OnInit {
   }
 
   getMember(member: Member) {
+    console.log('hi there friendo')
     this.memberService.memberSelected.next(member)
-    this.teamService.selectedTeam.next(null)
+    console.log(member)
+
   }
 
 }

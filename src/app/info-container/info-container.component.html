@@ -13,9 +13,7 @@
 </mat-card-content>
 
 <mat-card-content *ngIf="this.selectedMember">
-  
-    <app-member-view></app-member-view>
-
+  <mat-card-title><a (click)="returnToTeam()">{{team.name}}</a>  > {{member.name}}</mat-card-title>
   </mat-card-content>
 
 </mat-card>
