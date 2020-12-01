@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Team } from '../models/team';
 import { TEAMS } from './../mock-files/mock-teams';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { TeamsService } from '../teams.service';
+import { TeamsService } from '../services/teams.service';
 
 
 @Component({

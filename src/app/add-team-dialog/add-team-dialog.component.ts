@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TEAMS } from '../mock-files/mock-teams';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TeamsService } from './../teams.service';
+import { TeamsService } from './../services/teams.service';
 import { Team } from './../models/team';
 import { Router } from '@angular/router';
 
@@ -19,11 +19,13 @@ export class AddTeamDialogComponent implements OnInit {
   });
 
   constructor(
+    public dialogRef: MatDialogRef<AddTeamDialogComponent>,
     private teamsService: TeamsService,
     @Inject(MAT_DIALOG_DATA) public data: {name: string, description: string},
-    private router: Router) { }
+    private router: Router, private teamService:TeamsService) { }
 
   ngOnInit(): void {
+
   }
 
   submit() {
@@ -33,7 +35,7 @@ export class AddTeamDialogComponent implements OnInit {
     this.teamsService.addNewTeam(newTeam).subscribe((data: Team) => {
       localStorage.setItem('name', data.name);
       localStorage.setItem('description', data.description);
+      this.dialogRef.close(newTeam)
     })
-
   }
 }

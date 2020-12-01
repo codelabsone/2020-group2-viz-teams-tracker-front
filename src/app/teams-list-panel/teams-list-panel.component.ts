@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Team } from 'src/app/models/team';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,10 +6,10 @@ import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog
 import {TooltipPosition} from '@angular/material/tooltip';
 import { Member } from '../models/member';
 import { Identifiers } from '@angular/compiler';
-import { TeamsService } from '../teams.service';
+import { TeamsService } from '../services/teams.service';
 import { FormControl } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { PicsumService } from '../picsum.service';
+import { PicsumService } from '../services/picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
 
@@ -18,7 +18,7 @@ import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
   templateUrl: './teams-list-panel.component.html',
   styleUrls: ['./teams-list-panel.component.scss']
 })
-export class TeamsListPanelComponent implements OnInit {
+export class TeamsListPanelComponent implements OnInit{
   member: Member
   memberPic: string
   images = [];
@@ -30,7 +30,7 @@ export class TeamsListPanelComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private teamservice: TeamsService,
-    private picsumService: PicsumService
+    private picsumService: PicsumService,
     ) { }
 
   ngOnInit(): void {
@@ -38,6 +38,9 @@ export class TeamsListPanelComponent implements OnInit {
       this.teams = x
     })
   }
+
+
+
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
     moveItemInArray(team.members, event.previousIndex, event.currentIndex)
@@ -64,6 +67,7 @@ export class TeamsListPanelComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.teams.push(result)
     });
   }
 
