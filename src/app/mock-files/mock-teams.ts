@@ -1,4 +1,4 @@
-import {Team} from '../team';
+import {Team} from '../models/team-interface';
 // import { MEMBERS } from '../mock-files/mock-members';
 
 

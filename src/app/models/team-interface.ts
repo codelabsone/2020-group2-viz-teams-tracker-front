@@ -3,7 +3,7 @@ import { Member } from './member'
 export class Team {
     id: number;
     name: string;
-    description: string;
+    description?: string;
     members: Member[];
 
   constructor (value: any) {
