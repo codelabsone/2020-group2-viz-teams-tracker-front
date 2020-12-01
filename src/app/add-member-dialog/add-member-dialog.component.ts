@@ -1,10 +1,10 @@
 import { TEAMS } from './../mock-files/mock-teams';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Team } from 'src/app/team';
+import { Team } from '../models/team';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TeamsService } from '../teams.service';
-import { PicsumService } from '../picsum.service';
+import { PicsumService } from '../services/picsum.service';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 
 @Component({
@@ -35,4 +35,3 @@ export class AddMemberDialogComponent implements OnInit {
   }
 
 }
-

@@ -1,4 +1,4 @@
-import {Team} from '../team'
+import {Team} from '../models/team-interface'
 // import { MEMBERS } from '../mock-files/mock-members';
 
 
@@ -6,6 +6,7 @@ export const TEAMS: Team[]=[
   {
   id: 1,
   name: "P2P",
+  description: "baloney potato salad",
   members:[
   { id: 1, name: "Roger Beasley", pic: "http://placekitten.com/100/100", position:'Software engineer'},
   { id: 2, name: "Bob", pic: "http://placekitten.com/100/100", position:'Software engineer'},
@@ -25,6 +26,7 @@ export const TEAMS: Team[]=[
   {
   id: 2,
   name: "nema-codes",
+  description: "Gold Team rules",
   members:[
   { id: 1, name: "Steve", pic: "http://placekitten.com/100/100", position:'Software engineer'},
   { id: 2, name: "Bob", pic: "http://placekitten.com/100/100", position:'Software engineer'},

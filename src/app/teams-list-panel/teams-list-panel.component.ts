@@ -1,13 +1,15 @@
-import { Team } from './../team';
+import { Team } from '../models/team-interface';
 import { Member } from './../models/member';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
 import {TooltipPosition} from '@angular/material/tooltip';
-import { TeamsService } from '../teams.service';
+import { Identifiers } from '@angular/compiler';
+import { TeamsService } from '../services/teams.service';
 import { FormControl } from '@angular/forms';
-import { PicsumService } from '../picsum.service';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { PicsumService } from '../services/picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem,} from '@angular/cdk/drag-drop';
 
@@ -33,7 +35,7 @@ export class TeamsListPanelComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private teamservice: TeamsService,
-    private picsumService: PicsumService
+    private picsumService: PicsumService,
     ) { }
 
   ngOnInit(): void {
@@ -44,6 +46,9 @@ export class TeamsListPanelComponent implements OnInit {
       };
     })
   }
+
+
+
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
     if (event.previousContainer === event.container) 
@@ -89,6 +94,7 @@ export class TeamsListPanelComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.teams.push(result)
     });
   }
 
