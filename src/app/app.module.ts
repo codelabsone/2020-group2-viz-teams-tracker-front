@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
@@ -24,6 +23,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
@@ -60,8 +60,8 @@ import { MemberViewComponent } from './member-view/member-view.component';
     MatTooltipModule,
     MatListModule,
     MatGridListModule,
-    MatPaginatorModule,
-    
+    MatPaginatorModule
+
 
   ],
   providers: [TeamsService],
