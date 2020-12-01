@@ -1,11 +1,11 @@
 import { TEAMS } from './../mock-files/mock-teams';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Team } from '../models/team';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { TeamsService } from '../teams.service';
 import { PicsumService } from '../services/picsum.service';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import { Team } from '../models/team-interface';
+import { TeamsService } from '../services/teams.service';
 
 @Component({
   selector: 'app-add-member-dialog',

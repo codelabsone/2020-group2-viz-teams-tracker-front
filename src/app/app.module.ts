@@ -22,7 +22,7 @@ import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.
 import { TeamsService } from './services/teams.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -65,7 +65,7 @@ import { MemberViewComponent } from './member-view/member-view.component';
     MatListModule,
     MatGridListModule,
     MatPaginatorModule,
-
+    FormsModule
 
   ],
   providers: [TeamsService],

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamsService } from '../teams.service';
 import { Member } from '../models/member';
-import { Team } from '../team';
-import { TeamMembersService } from '../team-members.service';
 import { TEAMS } from '../mock-files/mock-teams';
+import { Team } from '../models/team-interface';
+import { TeamMembersService } from '../services/team-members.service';
+import { TeamsService } from '../services/teams.service';
 
 @Component({
   selector: 'app-member-view',

@@ -3,8 +3,8 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TEAMS } from '../mock-files/mock-teams';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TeamsService } from './../services/teams.service';
-import { Team } from './../models/team';
 import { Router } from '@angular/router';
+import { Team } from '../models/team-interface';
 
 @Component({
   selector: 'app-add-team-dialog',
