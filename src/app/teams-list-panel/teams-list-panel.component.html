@@ -5,15 +5,15 @@
       </mat-card-title>
     </mat-card-header>
       <mat-card-content >
-        <div cdkDropListGroup>
-        <mat-expansion-panel (click)="showTeam(team)" cdkDropList *ngFor="let team of teams" showToggle>
+        <div cdkDropListGroup >
+        <mat-expansion-panel (click)="showTeam(team)" *ngFor="let team of teams" showToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{team.name}}
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <div cdkDropList class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
+          <div class="card-content" cdkDropList [cdkDropListData]="team.members" (cdkDropListDropped)="drop($event, team)"  *ngIf="team" >
             <div *ngFor="let member of team.members" class="image-div" cdkDrag>
                 <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
             </div>

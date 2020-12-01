@@ -29,7 +29,7 @@ export class TeamsListPanelComponent implements OnInit {
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
   title = 'group2-viz-teams-tracker-front';
-
+  connectedTo = [];
   constructor(
     public dialog: MatDialog,
     private teamservice: TeamsService,
@@ -39,21 +39,29 @@ export class TeamsListPanelComponent implements OnInit {
   ngOnInit(): void {
     this.teamservice.getAllTeams().subscribe(data => {
       this.teams = data
+      for (let team of this.teams) {
+        this.connectedTo.push(team)
+      };
     })
   }
 
-  drop(event: CdkDragDrop<string[]>, team: Team,  otherTeam: Team) {
+  drop(event: CdkDragDrop<string[]>, team: Team) {
     if (event.previousContainer === event.container) 
     {
       moveItemInArray(team.members, event.previousIndex, event.currentIndex);
       console.log(team.members)
+
     } 
     else {
       
-      transferArrayItem(team.members,
-        otherTeam.members,
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
         event.previousIndex,
         event.currentIndex );
+        console.log(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
     }
   }
 
