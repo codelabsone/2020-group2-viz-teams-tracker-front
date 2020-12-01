@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
+import { Team } from '../models/team-interface';
 import { TEAMS } from '../mock-files/mock-teams';
 import { Router } from "@angular/router";
 import { map, tap } from 'rxjs/operators';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { Team } from '../models/team-interface';
 
 
 @Injectable({
@@ -39,9 +39,9 @@ constructor(
    getAllTeams() {
     return this.http.get<any>(`${this.apiUrl}/index`)
     .pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
-    );
+      tap(data => console.log('All: ' + JSON.stringify(data))),)
    }
+
 
    addNewTeam(params) {
     return this.http.post<any>(`${this.apiUrl}/create`, params);

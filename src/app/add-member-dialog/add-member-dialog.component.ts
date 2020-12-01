@@ -1,10 +1,10 @@
 import { TEAMS } from './../mock-files/mock-teams';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Team } from '../models/team-interface';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PicsumService } from '../services/picsum.service';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
-import { Team } from '../models/team-interface';
 import { TeamsService } from '../services/teams.service';
 
 @Component({

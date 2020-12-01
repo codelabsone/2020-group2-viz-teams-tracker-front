@@ -1,5 +1,5 @@
 import { Member } from './../models/member';
-import { Team } from 'src/app/team';
+import { Team } from '../models/team-interface';
 import { TEAMS } from './../mock-files/mock-teams';
 import { Observable } from 'rxjs';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';

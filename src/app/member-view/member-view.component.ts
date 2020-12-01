@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../models/member';
-import { TEAMS } from '../mock-files/mock-teams';
 import { Team } from '../models/team-interface';
 import { TeamMembersService } from '../services/team-members.service';
+import { TEAMS } from '../mock-files/mock-teams';
 import { TeamsService } from '../services/teams.service';
 
 @Component({
@@ -27,8 +27,8 @@ export class MemberViewComponent implements OnInit {
 
 
   returnToTeam(): void {
-    
-    
+
+
   }
 
 }
