@@ -1,10 +1,10 @@
-import { Component, OnInit} from '@angular/core';
-import { Team } from 'src/app/models/team';
+import { Team } from '../models/team-interface';
+import { Member } from './../models/member';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
 import {TooltipPosition} from '@angular/material/tooltip';
-import { Member } from '../models/member';
 import { Identifiers } from '@angular/compiler';
 import { TeamsService } from '../services/teams.service';
 import { FormControl } from '@angular/forms';
@@ -13,12 +13,15 @@ import { PicsumService } from '../services/picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 import {CdkDragDrop, moveItemInArray,} from '@angular/cdk/drag-drop';
 
+
 @Component({
   selector: 'app-teams-list-panel',
   templateUrl: './teams-list-panel.component.html',
   styleUrls: ['./teams-list-panel.component.scss']
 })
-export class TeamsListPanelComponent implements OnInit{
+export class TeamsListPanelComponent implements OnInit {
+  @Input() Member: string;
+  @Output() panelClick = new EventEmitter<Team>();
   member: Member
   memberPic: string
   images = [];
@@ -47,6 +50,12 @@ export class TeamsListPanelComponent implements OnInit{
   }
 
   openDialog(team: Team) {
+
+    this.picsumService.getPictures().subscribe((result: any) => {
+      this.images = result;
+      console.log(this.images);
+    })
+
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}
 
@@ -55,10 +64,7 @@ export class TeamsListPanelComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-    this.picsumService.getPictures().subscribe((result: any) => {
-      this.images = result;
-      console.log(this.images);
-    })
+
   }
   openNewTeamDialog() {
     let dialogRef = this.dialog.open(AddTeamDialogComponent, {
@@ -81,6 +87,10 @@ export class TeamsListPanelComponent implements OnInit{
 
   }
 
+  showTeam(team: Team) {
+    this.teamservice.selectedTeam.next(team)
+    console.log("this")
+  }
 }
 
 

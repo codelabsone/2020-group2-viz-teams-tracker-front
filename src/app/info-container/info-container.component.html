@@ -1,9 +1,19 @@
+
 <mat-card>
-  
-  <mat-card-content>
+  <mat-card-content class="not-selected" *ngIf="!this.selectedTeam && !this.selectedMember">
 
-      Select a team to view members.
+      Select a team to view members
 
+  </mat-card-content>
+
+<mat-card-content *ngIf="this.selectedTeam">
+
+  <app-team-view></app-team-view>
+
+</mat-card-content>
+
+<mat-card-content *ngIf="this.selectedMember">
+  <mat-card-title><a (click)="returnToTeam()">{{team.name}}</a>  > {{member.name}}</mat-card-title>
   </mat-card-content>
 
 </mat-card>

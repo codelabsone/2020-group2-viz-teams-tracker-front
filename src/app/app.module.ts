@@ -24,6 +24,12 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddTeamDialogComponent } from './add-team-dialog/add-team-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { TeamViewComponent } from './team-view/team-view.component';
+import { MemberViewComponent } from './member-view/member-view.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +39,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     TeamsListPanelComponent,
     AddMemberDialogComponent,
     AddTeamDialogComponent,
+    TeamViewComponent,
+    MemberViewComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatTooltipModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatGridListModule,
+    MatPaginatorModule,
+
 
   ],
   providers: [TeamsService],

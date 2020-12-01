@@ -1,20 +1,21 @@
 export class Member {
   id?: number
   name?: string
+  position?: string
   pic?: string
 
-  constructor({
-    id = null,
-    name = '',
-    pic = '',
-    ...rest
-  }) {
+  // constructor({
+  //   id = null,
+  //   name = '',
+  //   pic = '',
+  //   ...rest
+  // }) {
 
-    Object.assign(this, rest)
-    this.id = id
-    this.name = name,
-    this.pic = pic
-  }
+  //   Object.assign(this, rest)
+  //   this.id = id
+  //   this.name = name,
+  //   this.pic = pic
+  // }
 }
 
 // Types of property 'members' are incompatible.

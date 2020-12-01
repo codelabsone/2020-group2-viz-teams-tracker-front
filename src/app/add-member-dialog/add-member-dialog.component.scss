@@ -50,3 +50,14 @@ width: 45%;
   margin-right: 5px;
   width: 45%;
 }
+
+.user-image-container {
+  display: flex;
+  margin: 10px 30px;
+  justify-content: space-between;
+}
+
+.selected-user-image {
+  border-bottom: 2px  #ff4e00 solid;
+  opacity: 1.0;
+}

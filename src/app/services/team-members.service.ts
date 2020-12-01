@@ -1,10 +1,10 @@
 import { TEAMS } from '../mock-files/mock-teams';
 import { Member } from "../models/member";
 // import { MEMBERS  } from "./mock-files/mock-members";
-import { Team } from "../models/team";
-import { RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Team } from "../models/team-interface";
+import { RouterModule } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -14,6 +14,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TeamMembersService {
+  memberSelected: BehaviorSubject<Member> = new BehaviorSubject(null);
 private memberUrl = './mock-members.ts'
   constructor( private http: HttpClient) {
    }
