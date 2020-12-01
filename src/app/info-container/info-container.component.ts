@@ -1,10 +1,8 @@
-import { Team } from './../team';
+import { Team } from './../models/team-interface';
 import { Component, OnInit, Input } from '@angular/core';
-import { TeamsService } from '../teams.service';
 import { Member } from '../models/member';
-import { TeamMembersService } from '../team-members.service'
-
-
+import { TeamMembersService } from '../services/team-members.service'
+import { TeamsService } from '../services/teams.service'
 
 @Component({
   selector: 'app-info-container',
@@ -32,14 +30,14 @@ export class InfoContainerComponent implements OnInit {
       this.member = this.selectedMember
     })
 
-    
+
   }
-  
+
   returnToTeam(): void {
     this.teamService.selectedTeam.subscribe( data => {
       this.selectedTeam = data
       this.selectedMember = null
     });
   }
- 
+
 }
