@@ -4,6 +4,7 @@
         Teams
       </mat-card-title>
     </mat-card-header>
+    <mat-progress-bar *ngIf="progressBarService.visible" mode="indeterminate"> </mat-progress-bar>
       <mat-card-content >
         <div>
         <mat-expansion-panel (click)="showTeam(team)"  *ngFor="let team of teams" showToggle>
