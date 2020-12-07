@@ -1,17 +1,9 @@
-<<<<<<< Updated upstream
-import { TeamMembersService } from './../services/team-members.service';
 
-=======
-import { Team } from './../models/team-interface';
->>>>>>> Stashed changes
+import { TeamMembersService } from './../services/team-members.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Member } from '../models/member';
-<<<<<<< Updated upstream
 import { Team } from '../models/team-interface';
 import { TeamsService } from '../services/teams.service';
-=======
-import { TeamMembersService } from '../services/team-members.service'
->>>>>>> Stashed changes
 
 
 

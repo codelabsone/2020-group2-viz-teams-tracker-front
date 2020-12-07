@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { TEAMS } from '../mock-files/mock-teams';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TeamsService } from './../services/teams.service';
 import { Team } from './../models/team-interface';
@@ -22,7 +21,7 @@ export class AddTeamDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<AddTeamDialogComponent>,
     private teamsService: TeamsService,
     @Inject(MAT_DIALOG_DATA) public data: {name: string, description: string},
-    private router: Router, private teamService:TeamsService) { }
+    private router: Router) { }
 
   ngOnInit(): void {
 

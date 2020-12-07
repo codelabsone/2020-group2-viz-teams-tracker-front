@@ -1,8 +1,20 @@
 export class Member {
-  id?: number
-  name?: string
-  position?: string
-  pic?: string
+  id: number
+  image: string
+  firstName: string
+  lastName: string
+  jobTitle: string
+  team: string
+
+  constructor (value: any) {
+    this.id = value.id;
+    this.image = value.image;
+    this.firstName = value.firstName;
+    this.lastName = value.lastName;
+    this.jobTitle = value.jobTitle;
+    this.team = value.team;
+  }
+}
 
   // constructor({
   //   id = null,
@@ -16,7 +28,7 @@ export class Member {
   //   this.name = name,
   //   this.pic = pic
   // }
-}
+
 
 // Types of property 'members' are incompatible.
 // Type '({ id: number; name: string; pic: string; } | { id: number; name: string; pic?: undefined; })[]' is not assignable to type 'Member[]'
