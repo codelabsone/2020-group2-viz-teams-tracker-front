@@ -25,12 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
-<<<<<<< HEAD
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-=======
 import {MatDividerModule} from '@angular/material/divider';
 
->>>>>>> master
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';
