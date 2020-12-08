@@ -1,11 +1,9 @@
 
-import { TeamMembersService } from './../services/team-members.service';
+import { Team } from './../models/team-interface';
 import { Component, OnInit, Input } from '@angular/core';
 import { Member } from '../models/member';
-import { Team } from '../models/team-interface';
-import { TeamsService } from '../services/teams.service';
-
-
+import { TeamMembersService } from '../services/team-members.service'
+import { TeamsService } from '../services/teams.service'
 
 @Component({
   selector: 'app-info-container',
