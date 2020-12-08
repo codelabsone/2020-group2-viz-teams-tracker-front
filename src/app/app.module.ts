@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
@@ -26,7 +25,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+<<<<<<< HEAD
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+=======
+import {MatDividerModule} from '@angular/material/divider';
+
+>>>>>>> master
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';

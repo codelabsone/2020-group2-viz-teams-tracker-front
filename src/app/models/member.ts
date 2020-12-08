@@ -2,7 +2,10 @@ export class Member {
   id?: number
   name?: string
   position?: string
+  email?: string
   pic?: string
+
+}
 
   // constructor({
   //   id = null,
@@ -16,7 +19,7 @@ export class Member {
   //   this.name = name,
   //   this.pic = pic
   // }
-}
+
 
 // Types of property 'members' are incompatible.
 // Type '({ id: number; name: string; pic: string; } | { id: number; name: string; pic?: undefined; })[]' is not assignable to type 'Member[]'

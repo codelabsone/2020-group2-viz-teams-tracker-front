@@ -1,3 +1,4 @@
+
 import { Team } from './../models/team-interface';
 import { Component, OnInit, Input } from '@angular/core';
 import { Member } from '../models/member';

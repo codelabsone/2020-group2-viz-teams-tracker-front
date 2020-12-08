@@ -56,7 +56,6 @@ mat-card {
 
 .position {
   width: 100% !important;
-  margin-bottom: 10px;
 }
 
 .mat-card-title {
@@ -64,10 +63,26 @@ mat-card {
   padding-top: 16px;
 }
 
-.member-image {
-  margin: 10px;
-  min-width: 85px;
-  min-height: 85px;
-  max-width: 85px;
-  max-height: 85px;
+
+.member-image-selected {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 110px;
+  height: 110px;
+  vertical-align: middle;
+}
+
+.member-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-bottom: 3px !important;
+  margin-left: 3px;
+  color: rgba(69,90,100,.87) !important
+}
+
+.member-data{
+  margin-top: 50px;
+  font-size: 1.5em;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

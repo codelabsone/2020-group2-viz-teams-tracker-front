@@ -1,7 +1,7 @@
 import { Team } from '../models/team-interface';
 import { Member } from './../models/member';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TEAMS } from '../mock-files/mock-teams';
+// import { TEAMS } from '../mock-files/mock-teams';
 import { MatDialog } from '@angular/material/dialog';
 import { AddMemberDialogComponent } from '../add-member-dialog/add-member-dialog.component';
 import {TooltipPosition} from '@angular/material/tooltip';
@@ -27,7 +27,7 @@ export class TeamsListPanelComponent implements OnInit {
   otherTeam: Team
   memberPic: string
   images = [];
-  teams: Team[] = TEAMS;
+  teams: Team[];
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
   title = 'group2-viz-teams-tracker-front';
@@ -59,14 +59,14 @@ export class TeamsListPanelComponent implements OnInit {
 
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
-    if (event.previousContainer === event.container) 
+    if (event.previousContainer === event.container)
     {
       moveItemInArray(team.members, event.previousIndex, event.currentIndex);
       console.log(team.members)
 
-    } 
+    }
     else {
-      
+
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
@@ -108,11 +108,11 @@ export class TeamsListPanelComponent implements OnInit {
 
   setDefaultPic(member: Member): string {
     // console.log("member works", this.member)
-    if (member.pic === null || member.pic === undefined) {
+    if (member.image === null || member.image === undefined) {
       // console.log("it works")
       return 'assets/images/avatar.png'
     }
-    return member.pic
+    return member.image
 
   }
 
