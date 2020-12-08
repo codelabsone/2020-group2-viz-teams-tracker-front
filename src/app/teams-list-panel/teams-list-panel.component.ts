@@ -12,7 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { PicsumService } from '../services/picsum.service';
 import { AddTeamDialogComponent } from '../add-team-dialog/add-team-dialog.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem,} from '@angular/cdk/drag-drop';
-
+import { ProgressBarService } from '../progress-bar.service';
 
 @Component({
   selector: 'app-teams-list-panel',
@@ -36,18 +36,26 @@ export class TeamsListPanelComponent implements OnInit {
     public dialog: MatDialog,
     private teamservice: TeamsService,
     private picsumService: PicsumService,
+    public progressBarService: ProgressBarService,
     ) { }
 
   ngOnInit(): void {
+    this.progressBarService.show();
+    console.log("it should be loading");
     this.teamservice.getAllTeams().subscribe(data => {
       this.teams = data
       for (let team of this.teams) {
         this.connectedTo.push(team)
       };
+      this.progressBarService.hide();
+      console.log("it should be loaded");
     })
+    
   }
-
-
+  ngAfterViewInit(): void {
+    
+  }
+  
 
 
   drop(event: CdkDragDrop<string[]>, team: Team) {

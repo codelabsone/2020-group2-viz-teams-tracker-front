@@ -14,7 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { TeamsListPanelComponent } from './teams-list-panel/teams-list-panel.component';
 import { AddMemberDialogComponent } from './add-member-dialog/add-member-dialog.component';
@@ -25,11 +25,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+<<<<<<< HEAD
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+=======
 import {MatDividerModule} from '@angular/material/divider';
 
+>>>>>>> master
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';
+import { ProgressBarInterceptorService } from './progress-bar-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -65,10 +70,16 @@ import { MemberViewComponent } from './member-view/member-view.component';
     MatListModule,
     MatGridListModule,
     MatPaginatorModule,
-    FormsModule
+    MatProgressBarModule,
+    FormsModule,
+
 
   ],
-  providers: [TeamsService],
+  providers: [TeamsService,
+  {provide: HTTP_INTERCEPTORS,
+    useClass: ProgressBarInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
