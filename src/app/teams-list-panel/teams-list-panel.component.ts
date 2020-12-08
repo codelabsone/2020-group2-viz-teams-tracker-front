@@ -83,6 +83,11 @@ export class TeamsListPanelComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      const team = this.teams.forEach(t => {
+        if (t.id === result.team_id){
+          t.members.push(result)
+        }
+      })
       console.log(`Dialog result: ${result}`);
     });
 
@@ -99,8 +104,8 @@ export class TeamsListPanelComponent implements OnInit {
   }
 
   setDefaultPic(member: Member): string {
-    // console.log("member works", this.member)
-    if (member.image === null || member.image === undefined) {
+    // console.log("member works", member)
+    if (member.image === null || member.image === undefined || member.image === "") {
       // console.log("it works")
       return 'assets/images/avatar.png'
     }

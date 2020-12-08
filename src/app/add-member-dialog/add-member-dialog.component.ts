@@ -31,7 +31,7 @@ export class AddMemberDialogComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     jobTitle: new FormControl('', Validators.required),
-    team: new FormControl('', Validators.required)
+    team_id: new FormControl('', Validators.required)
   })
 
   constructor(
@@ -63,9 +63,12 @@ export class AddMemberDialogComponent implements OnInit {
 
   submit() {
     console.log("submitted")
-    const newMember = new Member (this.formGroup.value);
+    this.formGroup.get("image").setValue(this.selectedImage.download_url)
+    const newMember = new Member(this.formGroup.value);
     console.log(this.formGroup.value);
+    console.log(newMember);
     this.memberService.addNewMember(newMember).subscribe((data: Member) => {
+      console.log(data)
       localStorage.setItem('image', data.image);
       localStorage.setItem('firstName', data.firstName);
       localStorage.setItem('lastName', data.lastName);

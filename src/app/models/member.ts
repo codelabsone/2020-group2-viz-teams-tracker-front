@@ -1,10 +1,20 @@
 export class Member {
-  id?: number
-  name?: string
-  position?: string
-  email?: string
-  pic?: string
+  id: number
+  image: string
+  firstName: string
+  lastName: string
+  jobTitle: string
+  team_id: number
+  // email: string
 
+  constructor (value: any) {
+    this.id = value.id;
+    this.image = value.image;
+    this.firstName = value.firstName;
+    this.lastName = value.lastName;
+    this.jobTitle = value.jobTitle;
+    this.team_id = value.team_id;
+  }
 }
 
   // constructor({

@@ -15,7 +15,7 @@
           </mat-expansion-panel-header>
           <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
             <div *ngFor="let member of team.members" class="image-div" cdkDrag>
-                <img matTooltip="{{member.name}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
+                <img matTooltip="{{member.firstName}} {{member.lastName}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
             </div>
           </div>
 
