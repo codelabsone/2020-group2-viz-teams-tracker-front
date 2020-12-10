@@ -37,4 +37,9 @@ export class AddTeamDialogComponent implements OnInit {
       this.dialogRef.close(newTeam)
     })
   }
+
+  cancel() {
+    this.teamsService.addNewTeam(null)
+    
+  }
 }
