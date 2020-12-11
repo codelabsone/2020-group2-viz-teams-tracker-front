@@ -25,13 +25,12 @@ export class AddMemberDialogComponent implements OnInit {
   lastName: string;
   jobTitle: string;
 
-
   formGroup = new FormGroup({
-    image: new FormControl('', Validators.required),
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     jobTitle: new FormControl('', Validators.required),
-    team_id: new FormControl('', Validators.required)
+    image: new FormControl(''),
+    team_id: new FormControl('', Validators.required),
   })
 
   constructor(
@@ -62,18 +61,24 @@ export class AddMemberDialogComponent implements OnInit {
   // }
 
   submit() {
-    console.log("submitted")
-    this.formGroup.get("image").setValue(this.selectedImage.download_url)
+    console.log("submitted") 
+    if(this.selectedImage){
+      this.formGroup.get("image").setValue(this.selectedImage.download_url)
+    }
     const newMember = new Member(this.formGroup.value);
     console.log(this.formGroup.value);
     console.log(newMember);
+    if(this.formGroup.valid === true) {
     this.memberService.addNewMember(newMember).subscribe((data: Member) => {
       console.log(data)
-      localStorage.setItem('image', data.image);
       localStorage.setItem('firstName', data.firstName);
       localStorage.setItem('lastName', data.lastName);
       localStorage.setItem('jobTitle', data.jobTitle);
+      localStorage.setItem('image', data.image);
       this.dialogRef.close(newMember)
-    })
+    }); 
   }
+ }
 }
+
+
