@@ -41,4 +41,13 @@ export class InfoContainerComponent implements OnInit {
     });
   }
 
+  setDefaultPic(member: Member): string {
+    // console.log("member works", member)
+    if (member.image === null || member.image === undefined || member.image === "") {
+      // console.log("it works")
+      return 'assets/images/avatar.png'
+    }
+    return member.image
+
+  }
 }

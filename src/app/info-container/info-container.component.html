@@ -13,17 +13,17 @@
 </mat-card-content>
 
 <mat-card-content *ngIf="this.selectedMember">
-  <mat-card-title><a (click)="returnToTeam()">{{team.name}}</a>  > {{member.name}}</mat-card-title>
+  <mat-card-title><a (click)="returnToTeam()">{{team.name}}</a>  > {{member.firstName}} {{member.lastName}}</mat-card-title>
 <mat-divider></mat-divider>
 
     <div class="member-name">
       <div>
-    <img class="member-image-selected" src="{{member.pic}}"/>
+    <img class="member-image-selected" [src]="setDefaultPic(member)"/>
   </div>
   <div class="member-data">
-      <div class="name">{{member.name}}</div>
+      <div class="name">{{member.firstName}} {{member.lastName}}</div>
       <div class="position">{{member.jobTitle}}</div>
-      <div class="email"> {{member.email}}</div>
+      <div class="email"></div>
     </div>
   </div>
   </mat-card-content>

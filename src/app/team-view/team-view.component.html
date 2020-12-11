@@ -5,7 +5,7 @@
     </mat-card-title>
   <div class="container">
   <div class="content" *ngFor="let member of members">
-    <img (click)="getMember(member);" class="member-image" src="{{member.image}}"/>
+    <img (click)="getMember(member);" class="member-image" [src]="setDefaultPic(member)"/>
     <div class="member-name">
       <div class="name">{{member.firstName}}{{member.lastName}}</div>
       <div class="position">{{member.jobTitle}}</div>
