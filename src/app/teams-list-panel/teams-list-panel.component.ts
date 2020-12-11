@@ -50,12 +50,12 @@ export class TeamsListPanelComponent implements OnInit {
       this.progressBarService.hide();
       console.log("it should be loaded");
     })
-    
+
   }
   ngAfterViewInit(): void {
-    
+
   }
-  
+
 
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
@@ -105,9 +105,18 @@ export class TeamsListPanelComponent implements OnInit {
 
     });
 
+
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.teams.push(result)
+      if (result === ""){
+        console.log("you have done the good")
+        return false
+      }
+      else{
+        this.teams.push(result)
+      }
+
+
     });
   }
 
