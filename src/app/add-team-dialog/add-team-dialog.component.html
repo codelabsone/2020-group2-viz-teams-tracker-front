@@ -2,17 +2,17 @@
   <div class="form-container">
       <div class="row">
           <mat-form-field class="formfield" class="team-name">
-          <input matInput class="form-control" formControlName="name" placeholder="Team Name">
+          <input matInput class="form-control" formControlName="name" placeholder="Team Name" required>
           </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field class="formfield" class="team-description">
-          <textarea matInput class="form-control" formControlName='description' placeholder="Team Description"></textarea>
+          <textarea matInput class="form-control" formControlName='description' placeholder="Team Description" required></textarea>
         </mat-form-field>
     </div>
   </div>
   <div class="button-row">
-    <button mat-button mat-dialog-close (click)='cancel()' type="cancel" >Cancel</button>
-    <button mat-button (click)='submit()' type="submit" >Submit</button>
+    <button mat-button mat-dialog-close (click)="cancel()" type="cancel" >Cancel</button>
+    <button mat-button (click)="submit()" type="submit" >Submit</button>
   </div>
 </form>

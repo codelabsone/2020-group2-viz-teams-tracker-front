@@ -31,15 +31,23 @@ export class AddTeamDialogComponent implements OnInit {
     console.log("submitted")
     const newTeam = new Team (this.formGroup.value);
     console.log(this.formGroup.value);
-    this.teamsService.addNewTeam(newTeam).subscribe((data: Team) => {
-      localStorage.setItem('name', data.name);
-      localStorage.setItem('description', data.description);
-      this.dialogRef.close(newTeam)
-    })
-  }
+    if (this.formGroup.get('name').value === "" || this.formGroup.get('description').value === ""){
+      console.log('you have done the bad');
+      return false
+    }
+    else {
+      this.teamsService.addNewTeam(newTeam).subscribe((data: Team) => {
+        // localStorage.setItem('name', data.name);
+        // localStorage.setItem('description', data.description);
+        this.dialogRef.close(newTeam)
+      }
+
+      )}
+}
 
   cancel() {
-    this.teamsService.addNewTeam(null)
-    
+    // this.teamsService.addNewTeam(null)
+    return false
+
   }
 }
