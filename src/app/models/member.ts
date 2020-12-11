@@ -5,7 +5,7 @@ export class Member {
   lastName: string
   jobTitle: string
   team_id: number
-  // email: string
+  email: string
 
   constructor (value: any) {
     this.id = value.id;
@@ -14,6 +14,7 @@ export class Member {
     this.lastName = value.lastName;
     this.jobTitle = value.jobTitle;
     this.team_id = value.team_id;
+    this.email = value.email
   }
 }
 
