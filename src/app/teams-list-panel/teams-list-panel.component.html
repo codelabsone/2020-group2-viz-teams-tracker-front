@@ -14,7 +14,7 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          
+
             <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
               <div *ngIf="team.members.length === 0" class="no-members">
                 <div>
