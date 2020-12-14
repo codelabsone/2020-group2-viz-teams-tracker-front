@@ -31,6 +31,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';
 import { ProgressBarInterceptorService } from './progress-bar-interceptor.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ProgressBarInterceptorService } from './progress-bar-interceptor.servic
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
+    FlexLayoutModule,
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
