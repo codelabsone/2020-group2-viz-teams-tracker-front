@@ -48,6 +48,14 @@ export class InfoContainerComponent implements OnInit {
       return 'assets/images/avatar.png'
     }
     return member.image
+  }
 
+  generateEmail(member: Member): string {
+    var x = this.member.firstName
+    var initial = x.charAt(0)
+    var last = this.member.lastName
+    var email = initial.toLowerCase() + last.toLowerCase() + "@vizientinc.com"
+    console.log(email)
+    return email
   }
 }

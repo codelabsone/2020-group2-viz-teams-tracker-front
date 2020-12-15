@@ -25,7 +25,6 @@ export class MemberViewComponent implements OnInit {
     })
   }
 
-
   returnToTeam(): void {
 
 
