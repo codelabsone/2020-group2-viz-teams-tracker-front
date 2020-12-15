@@ -21,7 +21,7 @@
                   <h2>No members on this team.</h2>
                 </div>
               </div>
-              <div *ngIf="team.members.length > 0">
+              <div class="image-container" *ngIf="team.members.length > 0">
                 <div *ngFor="let member of team.members" class="image-div" cdkDrag>
                   <img matTooltip="{{member.firstName}} {{member.lastName}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
                 </div>

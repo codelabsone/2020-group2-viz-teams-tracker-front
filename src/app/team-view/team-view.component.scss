@@ -1,7 +1,6 @@
 .content {
     display: flex;
     width: 50%;
-
     img {
       width: 50%;
     }
@@ -16,7 +15,8 @@
     justify-content: flex-end;
     margin-bottom: 3px !important;
     margin-left: 3px;
-    color: rgba(69,90,100,.87) !important
+    color: rgba(69,90,100,.87) !important;
+    overflow: hidden;
   }
 
   .not-selected {
@@ -40,9 +40,10 @@
 
   mat-card-content {
     width: 100%;
+
   }
 
-  mat-card {
+  .mat-card {
     height: 100%;
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Member } from '../models/member';
 import { Team } from '../models/team-interface';
 import { TeamMembersService } from '../services/team-members.service';
@@ -7,7 +7,9 @@ import { TeamsService } from '../services/teams.service';
 @Component({
   selector: 'app-team-view',
   templateUrl: './team-view.component.html',
-  styleUrls: ['./team-view.component.scss']
+  styleUrls: ['./team-view.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class TeamViewComponent implements OnInit {
   team: Team
