@@ -132,11 +132,7 @@ export class TeamsListPanelComponent implements OnInit {
 
   showTeam(team: Team) {
     this.teamservice.selectedTeam.next(team)
-    console.log("this")
+    console.log(team)
   }
 }
-
-
-
-
 
