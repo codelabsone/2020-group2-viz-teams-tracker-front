@@ -59,14 +59,15 @@ export class TeamsListPanelComponent implements OnInit {
 
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
+    console.log(event)
     if (event.previousContainer === event.container)
     {
+      console.log("it should be dragging")
       moveItemInArray(team.members, event.previousIndex, event.currentIndex);
       console.log(team.members)
-
     }
     else {
-
+      console.log("it is dragged")
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
