@@ -14,16 +14,24 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
-            <div *ngFor="let member of team.members" class="image-div" cdkDrag>
-                <img matTooltip="{{member.firstName}} {{member.lastName}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
+
+            <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
+              <div *ngIf="team.members.length === 0" class="no-members">
+                <div>
+                  <h2>No members on this team.</h2>
+                </div>
+              </div>
+              <div *ngIf="team.members.length > 0">
+                <div *ngFor="let member of team.members" class="image-div" cdkDrag>
+                  <img matTooltip="{{member.firstName}} {{member.lastName}}" matTooltipPosition="above" *ngIf="member" [src]="setDefaultPic(member)" class="tooltip" >
+                </div>
+              </div>
             </div>
-          </div>
 
           <mat-action-row >
             <div class="team-counter">
             <p *ngIf="team.members">{{team.members.length}}/12</p>
-            <p *ngIf="!team.members">0/12</p>
+            <!-- <p *ngIf="!team.members">0/12</p> -->
             </div>
             <mat-icon class="memberIcon" (click)="openDialog(team)">person_add</mat-icon>
           </mat-action-row>

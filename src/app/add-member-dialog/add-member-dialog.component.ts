@@ -60,13 +60,24 @@ export class AddMemberDialogComponent implements OnInit {
   //   }
   // }
 
+  setDefaultPic(member: Member): string {
+    console.log("member works", member)
+    if (member.image === null || this.setDefaultPic === undefined || member.image === "") {
+      // console.log("it works")
+      return 'assets/images/avatar.png'
+    }
+    return member.image
+
+  }
+
   submit() {
-    console.log("submitted") 
+    console.log("submitted")
     if(this.selectedImage){
       this.formGroup.get("image").setValue(this.selectedImage.download_url)
     }
     const newMember = new Member(this.formGroup.value);
     console.log(this.formGroup.value);
+
     console.log(newMember);
     if(this.formGroup.valid === true) {
     this.memberService.addNewMember(newMember).subscribe((data: Member) => {
@@ -76,7 +87,7 @@ export class AddMemberDialogComponent implements OnInit {
       localStorage.setItem('jobTitle', data.jobTitle);
       localStorage.setItem('image', data.image);
       this.dialogRef.close(newMember)
-    }); 
+    });
   }
  }
 }
