@@ -26,12 +26,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';
 import { ProgressBarInterceptorService } from './progress-bar-interceptor.service';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +55,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
-    FlexLayoutModule,
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
@@ -69,8 +67,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatPaginatorModule,
     MatProgressBarModule,
     FormsModule,
-    FlexLayoutModule
-
+  
   ],
   providers: [TeamsService,
   {provide: HTTP_INTERCEPTORS,

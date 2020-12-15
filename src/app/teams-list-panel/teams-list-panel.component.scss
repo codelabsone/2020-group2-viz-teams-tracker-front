@@ -42,7 +42,9 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
-
+.image-container {
+  display: flex;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 100px;
