@@ -1,6 +1,6 @@
 import { InfoContainerComponent } from './info-container/info-container.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { HeaderComponent } from '../app/header/header.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -67,7 +67,9 @@ import { ProgressBarInterceptorService } from './progress-bar-interceptor.servic
     MatPaginatorModule,
     MatProgressBarModule,
     FormsModule,
-  
+    // ChangeDetectionStrategy
+
+
   ],
   providers: [TeamsService,
   {provide: HTTP_INTERCEPTORS,
