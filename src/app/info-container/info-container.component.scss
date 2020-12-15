@@ -47,6 +47,7 @@ mat-card-content {
 mat-card {
   display: flex;
   height: 86%;
+  overflow: scroll;
 }
 
 .name {

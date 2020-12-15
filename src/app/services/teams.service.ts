@@ -47,6 +47,10 @@ constructor(
     return this.http.post<any>(`${this.apiUrl}/create`, params);
    }
 
+   deleteTeam() {
+     return this.http.delete<any>(`${this.apiUrl}/destroy`)
+   }
+
    cancelAdd() {
 
    }
