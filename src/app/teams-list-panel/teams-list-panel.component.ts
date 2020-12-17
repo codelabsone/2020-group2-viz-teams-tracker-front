@@ -134,7 +134,20 @@ export class TeamsListPanelComponent implements OnInit {
     this.teamservice.selectedTeam.next(team)
     console.log("this")
   }
+
+// teamLimit() {
+//   if teamMember count is 0-11
+//     allow new members
+//   else
+//     don't allow new members
+//     end
+
+// }
+
+
 }
+
+
 
 
 
