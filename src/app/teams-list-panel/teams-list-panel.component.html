@@ -6,7 +6,7 @@
     </mat-card-header>
     <mat-progress-bar *ngIf="progressBarService.visible" mode="indeterminate"> </mat-progress-bar>
       <mat-card-content >
-        <div>
+        <div cdkDropListGroup>
         <mat-expansion-panel (click)="showTeam(team)"  *ngFor="let team of teams" showToggle>
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -15,7 +15,7 @@
 
           </mat-expansion-panel-header>
 
-            <div cdkDropList cdkDropListOrientation="horizontal" class="card-content" *ngIf="team" (cdkDropListDropped)="drop($event, team)">
+            <div *ngIf="team" cdkDropList cdkDropListOrientation="horizontal" class="card-content" [cdkDropListData] = team.members  (cdkDropListDropped)="drop($event, team)">
               <div *ngIf="team.members.length === 0" class="no-members">
                 <div>
                   <h2>No members on this team.</h2>
