@@ -59,14 +59,15 @@ export class TeamsListPanelComponent implements OnInit {
 
 
   drop(event: CdkDragDrop<string[]>, team: Team) {
+    console.log(event)
     if (event.previousContainer === event.container)
     {
+      console.log("it should be dragging")
       moveItemInArray(team.members, event.previousIndex, event.currentIndex);
       console.log(team.members)
-
     }
     else {
-
+      console.log("it is dragged")
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
@@ -132,24 +133,9 @@ export class TeamsListPanelComponent implements OnInit {
 
   showTeam(team: Team) {
     this.teamservice.selectedTeam.next(team)
-    console.log("this")
+    console.log(team)
   }
 
-// teamLimit() {
-//   if teamMember count is 0-11
-//     allow new members
-//   else
-//     don't allow new members
-//     end
-
-// }
 
 
 }
-
-
-
-
-
-
-
