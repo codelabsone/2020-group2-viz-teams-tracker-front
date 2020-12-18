@@ -66,7 +66,8 @@ export class TeamsListPanelComponent implements OnInit {
       moveItemInArray(team.members, event.previousIndex, event.currentIndex);
       console.log(team.members)
     }
-    else {
+    else  {
+      if (event.container.data.length <= 11){
       console.log("it is dragged")
       transferArrayItem(event.previousContainer.data,
         event.container.data,
@@ -78,6 +79,7 @@ export class TeamsListPanelComponent implements OnInit {
           event.currentIndex);
     }
   }
+}
 
   openDialog(team: Team) {
 
@@ -85,6 +87,7 @@ export class TeamsListPanelComponent implements OnInit {
       this.images = result;
       console.log(this.images);
     })
+// if this.member.data.length =< 11
 
     let dialogRef = this.dialog.open(AddMemberDialogComponent, {
       data: {name: team.name}

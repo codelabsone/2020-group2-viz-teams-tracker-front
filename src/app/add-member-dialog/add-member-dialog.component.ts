@@ -80,6 +80,12 @@ export class AddMemberDialogComponent implements OnInit {
 
     console.log(newMember);
     if(this.formGroup.valid === true) {
+    const fullteams = this.teams.map(team => {
+    if (team.members.length > 11){
+    return team.id
+  }
+})
+  if(!fullteams.includes(newMember.team_id) )
     this.memberService.addNewMember(newMember).subscribe((data: Member) => {
       console.log(data)
       localStorage.setItem('firstName', data.firstName);
@@ -91,5 +97,3 @@ export class AddMemberDialogComponent implements OnInit {
   }
  }
 }
-
-
