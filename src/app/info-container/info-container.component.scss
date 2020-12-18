@@ -87,3 +87,19 @@ mat-card {
   font-size: 1.5em;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #707070;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
