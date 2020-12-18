@@ -3,6 +3,9 @@ import { Member } from '../models/member';
 import { Team } from '../models/team-interface';
 import { TeamMembersService } from '../services/team-members.service';
 import { TeamsService } from '../services/teams.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ArchiveTeamDialogComponent } from '../archive-team-dialog/archive-team-dialog.component';
+
 
 @Component({
   selector: 'app-team-view',
@@ -15,7 +18,7 @@ export class TeamViewComponent implements OnInit {
   team: Team
   members: Member[] = []
   // memberFriend: Member
-  constructor(private teamService: TeamsService, private memberService: TeamMembersService) { }
+  constructor(private teamService: TeamsService, private memberService: TeamMembersService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.teamService.selectedTeam.subscribe(team => {
@@ -42,5 +45,13 @@ export class TeamViewComponent implements OnInit {
     return member.image
 
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(ArchiveTeamDialogComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+
+

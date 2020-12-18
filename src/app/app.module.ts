@@ -30,6 +30,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { MemberViewComponent } from './member-view/member-view.component';
 import { ProgressBarInterceptorService } from './progress-bar-interceptor.service';
+import { ArchiveTeamDialogComponent } from './archive-team-dialog/archive-team-dialog.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProgressBarInterceptorService } from './progress-bar-interceptor.servic
     AddMemberDialogComponent,
     AddTeamDialogComponent,
     TeamViewComponent,
-    MemberViewComponent
+    MemberViewComponent,
+    ArchiveTeamDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,17 @@
-
-
 <mat-card-content *ngIf="team">
-    <mat-card-title>
-      {{team.name}}
-    </mat-card-title>
+  <mat-card-title>
+    {{team.name}}
+  </mat-card-title>
   <div class="container">
-  <div class="content" *ngFor="let member of members">
-    <img (click)="getMember(member);" class="member-image" [src]="setDefaultPic(member)"/>
-    <div class="member-name">
-      <div class="name">{{member.firstName}}{{member.lastName}}</div>
-      <div class="position">{{member.jobTitle}}</div>
+    <div class="content" *ngFor="let member of members">
+      <img (click)="getMember(member);" class="member-image" [src]="setDefaultPic(member)" />
+      <div class="member-name">
+        <div class="name">{{member.firstName}}{{member.lastName}}</div>
+        <div class="position">{{member.jobTitle}}</div>
+      </div>
     </div>
   </div>
-  </div>
-  </mat-card-content>
+  <button mat-icon-button aria-label="archive button" (click)="openDialog()">
+    <mat-icon>archive</mat-icon>
+  </button>
+</mat-card-content>

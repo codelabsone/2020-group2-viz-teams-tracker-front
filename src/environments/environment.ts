@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: "http://localhost:3000/"
-  apiUrl: 'https://group2-viz-teams-tracker-back.herokuapp.com/'
+  apiUrl: "http://localhost:3000/"
+  // apiUrl: 'https://group2-viz-teams-tracker-back.herokuapp.com/'
 };
 
 
